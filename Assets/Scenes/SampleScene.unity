@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 534686121}
   - component: {fileID: 534686120}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: Blue Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +515,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_Intensity: 1
   m_Range: 88503.305
   m_SpotAngle: 40.563427
@@ -1311,7 +1311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5148817237314227998}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -4.81968, y: 3.5317156, z: 0}
+  m_LocalPosition: {x: -4.81968, y: 5, z: 0}
   m_LocalScale: {x: 4721.698, y: 3000, z: 3000}
   m_Children: []
   m_Father: {fileID: 543450652160789474}
