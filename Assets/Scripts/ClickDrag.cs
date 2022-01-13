@@ -8,6 +8,8 @@ public class ClickDrag : MonoBehaviour
     RaycastHit hit;
 
     GameObject selectedObject;
+    GameObject selectedDoor;
+
     bool isDragging;
 
     void Start()
@@ -26,15 +28,24 @@ public class ClickDrag : MonoBehaviour
             {
                 string tag = hit.collider.gameObject.tag;
                 //print(tag); Tar bort den for the moment
-
+                if (hit.collider.gameObject.tag == "Door")
+                {
+                    selectedDoor = hit.collider.gameObject;
+                    //selectedDoor.transform.rotation = (new Vector3(0, 100, 0));
+                }
                 //Man kan skriva en kod för texten här
             }
 
             if(hit.collider != null)
             {
                 //Om vi har klickat på något sätter vi gameobjectet selectedGameobject till det som nyss blivit klickat på
-                selectedObject = hit.collider.gameObject;
-                isDragging = true;
+                if(hit.collider.gameObject.tag == "Player")
+                {
+                    print("Wihoo");
+                    selectedObject = hit.collider.gameObject;
+                    isDragging = true;
+                }
+                
                 //selectedObject blir till det man klickar oå tex Cube och Sphere. isDragging är också true
             }
 
