@@ -4,23 +4,47 @@ using UnityEngine;
 
 public class PlayerTrigger : MonoBehaviour
 {
+    //Sagas kod
     Vector3 startPos;
-    void Start()
+    public static bool returnHome;
+
+    //För att kunna avklara spelet, så att man inte på riktigt är fast där
+    public GameObject miniGame;
+
+     void Start()
     {
         startPos = transform.position;
+        returnHome = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Return()
     {
-        if(other.gameObject.tag == "Wall")
+        returnHome = true;
+    }
+
+    void Update()
+    {
+        if (transform.position == startPos)
         {
-            print("hejda");
+            returnHome = false;
+        }
+        else if(returnHome)
+        {
+            transform.position = startPos;
+        }
+    }
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.CompareTag("Wall"))
+        {
             Return();
+            
+        }
+        else if (collider.gameObject.CompareTag("Finish"))
+        {
+            miniGame.SetActive(false);
+            //Lampan ska lysa grönt
         }
     }
 
-    void Return()
-    {
-        transform.position = startPos;
-    }
 }
