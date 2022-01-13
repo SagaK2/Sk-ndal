@@ -25,9 +25,10 @@ public class Movement : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * Sensitivity * Time.deltaTime;
         //Varje frame minskar x-rotationen baserat på mouse Y. JR
         Xpos -= mouseY;
-        Xpos = Mathf.Clamp(Xpos, -90f, 90f);
         //Gör så man inte kan bryta nacken genom att kolla bakom sig på Y-axeln. JR
-        transform.localRotation = Quaternion.Euler(Xpos, 0f, 0f);
+        Xpos = Mathf.Clamp(Xpos, -90f, 90f);
+        //
+        transform.localRotation = Quaternion.Euler(Xpos, -182, 0f);
         //Rotera runt spelarens Y-axel när man rör runt musen på X-axeln. JR
         playerModel.Rotate(Vector3.up * mouseX);
     }
