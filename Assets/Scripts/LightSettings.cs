@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class LightSettings : MonoBehaviour
 {
+    /*
     //public Color myColor;
     public Light directionalLight;
     public Slider slider;
 
-    public float lightStrenght;
+    float lightStrenght;
     void Start()
     {
+
         //directionalLight.color = myColor; (Pröva på i andra tillfällen kanske)
         directionalLight.intensity = lightStrenght;
     }
@@ -20,5 +22,5 @@ public class LightSettings : MonoBehaviour
     {
         //Gör så att float värdet stämmer in på sliderns float värde.
         lightStrenght = slider.value;
-    }
+    }*/
 }

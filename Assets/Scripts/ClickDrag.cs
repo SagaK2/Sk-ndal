@@ -52,7 +52,13 @@ public class ClickDrag : MonoBehaviour
     }
     Vector3 MousePos()
     {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Mathf.Abs(Camera.main.transform.position.z);
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+       // mousePos.z = 0;
+        
+        
         //Fråga Tobias om det finare sättet att skriva musens alla koordinater istället för att rabbla upp de tre (via en variabel)
-        return Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z));
+        return mousePos;
     }
 }
