@@ -405,6 +405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionalLight: {fileID: 686251266}
+  slider: {fileID: 0}
+  lightStrenght: 0
 --- !u!1 &166285276
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine;
 public class ClickDrag : MonoBehaviour
 {
     //Sagas Kod
-    public LayerMask draggableMask;
     RaycastHit hit;
 
     GameObject selectedObject;
@@ -39,15 +38,16 @@ public class ClickDrag : MonoBehaviour
                 //selectedObject blir till det man klickar oå tex Cube och Sphere. isDragging är också true
             }
 
-            if(isDragging == true)
-            {
-                Vector3 pos = MousePos();
-                selectedObject.transform.position = pos;
-            }
 
         }else if(Input.GetMouseButtonUp(0))
         {
             isDragging = false;
+        }
+
+        if (isDragging == true)
+        {
+            Vector3 pos = MousePos();
+            selectedObject.transform.position = pos;
         }
     }
     Vector3 MousePos()

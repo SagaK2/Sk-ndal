@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 639903488}
   - component: {fileID: 639903487}
   - component: {fileID: 639903486}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: GameController
   m_Icon: {fileID: 0}
@@ -403,9 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f9e7f6feca6ea49bed8cb93b24a977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draggableMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1090585443
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +507,7 @@ GameObject:
   - component: {fileID: 1306381422}
   - component: {fileID: 1306381421}
   - component: {fileID: 1306381420}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Finish
   m_Icon: {fileID: 0}
@@ -634,6 +631,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f9e7f6feca6ea49bed8cb93b24a977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draggableMask:
-    serializedVersion: 2
-    m_Bits: 256
