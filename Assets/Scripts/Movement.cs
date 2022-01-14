@@ -10,11 +10,14 @@ public class Movement : MonoBehaviour
     public Transform playerModel;
     //
     float Xpos = 0f;
-    // Start is called before the first frame update
+
+    //Vi måste göra så att man kan använda musen till att spela spelet - Saga
+    bool miniGame;
     void Start()
     {
         //gör så man inte ser musen. JR
         Cursor.lockState = CursorLockMode.Locked;
+        miniGame = false;
     }
 
     // Update is called once per frame
