@@ -63,6 +63,7 @@ public class ClickDrag : MonoBehaviour
         {
             Vector3 pos = MousePos();
             selectedObject.transform.position = pos;
+            //selectedObject.transform.localPosition = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 0);
         }
         
         if (PlayerTrigger.returnHome)
@@ -76,7 +77,7 @@ public class ClickDrag : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Mathf.Abs(Camera.main.transform.position.z);
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-       // mousePos.z = 0;
+        //mousePos.z = 0;
         
         return mousePos;
     }
