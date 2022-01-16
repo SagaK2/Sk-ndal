@@ -14,6 +14,6 @@ public class GhoulmarMovement : MonoBehaviour
     
     void Update()
     {
-        rb.velocity = new Vector3(2, 0, 0);
+        rb.velocity = new Vector3(-2, 0, 0);
     }
 }
