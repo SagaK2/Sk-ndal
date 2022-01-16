@@ -12,8 +12,12 @@ public class Movement : MonoBehaviour
     float Xpos = 0f;
     //referens till spelaren
     public CharacterController Player;
-    //Låter oss välja fart
+    //Låter oss välja vilken hastighet vi rör oss framåt och bakåt i. JR
     public float speed = 12;
+    //variabel för vår nuvarande hastighet. JR
+    Vector3 Velocity;
+    //variabel för gravitation
+    public float gravity = -11;
 
     //Vi måste göra så att man kan använda musen till att spela spelet - Saga
     bool miniGame;
@@ -46,7 +50,14 @@ public class Movement : MonoBehaviour
         float xmovement = Input.GetAxis("Horizontal");
         //Väljer en riktning som är i förhållande till spelaren (alltså vänster eller höger istället för väst eller öst). JR
         Vector3 rörelse = transform.right * xmovement + transform.forward * Zmovement;
-        //Faktiskt rör oss åt den riktningen. Detta göra oss också inte snabbare ifall vi har högre FPS JR
+        //Faktiskt rör oss åt den riktningen. Detta gör också att vi inte rör oss snabbare ifall vi har högre FPS. JR
         Player.Move(rörelse*speed*Time.deltaTime);
+
+        //koden nedan är för gravitation. JR
+
+        //våran fart på y-axeln är gravitationen. JR
+        Velocity.y += gravity * Time.deltaTime;
+        //Rör spelaren 
+        Player.Move(Velocity * Time.deltaTime);
     }
 }
