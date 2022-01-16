@@ -22,24 +22,27 @@ public class GhoulmarMovement : MonoBehaviour
     
     void Update()
     {
-
+        
         /*if(randomThings)
         {
             Om randomThings är tex större än timern då ska den restarta med ett annat nummer
         }
         */
+
         print("Searching: " + randomThings + "Velocity:" + rb.velocity);
 
-        if(animator.GetBool("Idle") && randomThings <= 10) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
+        if(animator.GetBool("Idle") && randomThings >= 10 && randomThings <= 20) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
         {
             animator.SetBool("Looking", true);
             animator.SetBool("Idle", false);
             //Ville göra så att Ghoulmar randomly tittar runt om Idle animationen är igång
 
-        }else if(randomThings >= 20)
+        }else if(randomThings >= 20 && animator.GetBool("Looking") == false)
         {
             //Måste fixa i både kod och annat med float och transitions
             rb.velocity = new Vector3(0, 0, 2);
+            animator.SetBool("Idle", false);
+            timer = 0;
 
             /*if ()
             {
