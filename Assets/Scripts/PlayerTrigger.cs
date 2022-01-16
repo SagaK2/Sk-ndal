@@ -10,8 +10,11 @@ public class PlayerTrigger : MonoBehaviour
 
     //För att kunna avklara spelet, så att man inte på riktigt är fast där
     public GameObject miniGame;
+    public GameObject lamp;
+    public Light lampLight;
+    Color lampColor;
 
-     void Start()
+    void Start()
     {
         startPos = transform.position;
         returnHome = false;
@@ -43,6 +46,12 @@ public class PlayerTrigger : MonoBehaviour
         else if (collider.gameObject.CompareTag("Finish"))
         {
             miniGame.SetActive(false);
+            //röd FF0000
+            lampColor.r = 0;
+            lampColor.g = 255;
+            lampColor.b = 4;
+            lampColor.a = 255;
+            lampLight.color = lampColor;
             //Lampan ska lysa grönt
         }
     }
