@@ -12,7 +12,8 @@ public class PlayerTrigger : MonoBehaviour
     public GameObject miniGame;
     public GameObject lamp;
     public Light lampLight;
-    Color lampColor;
+    public Color lampColor;
+    //Gjorde den public så att den inte ändras, det var så att färgen ändrades lite här och där. 
 
     void Start()
     {
@@ -47,10 +48,6 @@ public class PlayerTrigger : MonoBehaviour
         {
             miniGame.SetActive(false);
             //röd FF0000
-            lampColor.r = 0;
-            lampColor.g = 255;
-            lampColor.b = 4;
-            lampColor.a = 255;
             lampLight.color = lampColor;
             //Lampan ska lysa grönt
         }

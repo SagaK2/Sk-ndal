@@ -1354,6 +1354,7 @@ MonoBehaviour:
   miniGame: {fileID: 553958969}
   lamp: {fileID: 0}
   lampLight: {fileID: 0}
+  lampColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &1051526858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1759,6 +1760,7 @@ MonoBehaviour:
   miniGame: {fileID: 215339313}
   lamp: {fileID: 1036439132}
   lampLight: {fileID: 1036439133}
+  lampColor: {r: 0.12595391, g: 1, b: 0, a: 1}
 --- !u!212 &1306381422
 SpriteRenderer:
   m_ObjectHideFlags: 0
