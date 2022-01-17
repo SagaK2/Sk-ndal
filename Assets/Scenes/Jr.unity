@@ -473,6 +473,7 @@ MonoBehaviour:
   spelare: {fileID: 1868780710}
   Player: {fileID: 1868780712}
   speed: 12
+  gravity: -11
 --- !u!1 &210571903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,7 +3133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868780709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -224.92, y: 12.4, z: 58}
+  m_LocalPosition: {x: -224.92, y: 12.71, z: 58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 780044274}
