@@ -12,6 +12,8 @@ public class ClickDrag : MonoBehaviour
 
     bool isDragging;
 
+    public Vector3 pos;
+
     //För att göra mini spelet i ellådan lite mindre buggigt (gör så att kuben åker tillbaka även om man håller in musen)
     
 
@@ -61,7 +63,7 @@ public class ClickDrag : MonoBehaviour
 
         if (isDragging)
         {
-            Vector3 pos = MousePos();
+            pos = MousePos();
             selectedObject.transform.position = pos;
             //selectedObject.transform.localPosition = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 0);
         }
