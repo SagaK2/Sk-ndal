@@ -10,7 +10,6 @@ public class PlayerTrigger : MonoBehaviour
 
     //För att kunna avklara spelet, så att man inte på riktigt är fast där
     public GameObject miniGame;
-    public GameObject lamp;
     public Light lampLight;
     public Color lampColor;
     //Gjorde den public så att den inte ändras, det var så att färgen ändrades lite här och där. 

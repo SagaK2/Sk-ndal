@@ -24,14 +24,14 @@ public class GhoulmarMovement : MonoBehaviour
     {
         print("reset");
         timer = 0;
-        randomThings = Random.Range(1, 30);
+        randomThings = Random.Range(1, 20);
     }
     void Update()
     {
         timer += Time.deltaTime;
         print(randomThings);
 
-        if(randomThings >= 5 && randomThings <= 20) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
+        if(randomThings >= 1 && randomThings <= 10) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
         {
             print("looking");
             animator.SetBool("Looking", true);
