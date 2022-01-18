@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class TextForElectricbox : MonoBehaviour
 {
+   //Luvas kod
     public GameObject text; //Referens till text gameobject
     public Text dialog; //Referens till UI:n vad som står.
     public int dialogcounter = 0;// Visar att dialog countern är på 0 när man börjar
@@ -28,7 +29,7 @@ public class TextForElectricbox : MonoBehaviour
             switch (dialogcounter) //Switch till Dialogcounter så att när man trycker T igen ska Nästa Case hända
             {
                 case 1: //Gör så att när man trycker T igen så kommer första Dialogen upp
-                    dialog.text = "You cant open this right now";
+                    dialog.text = "You cant open this now";
 
                     break;
 
@@ -55,6 +56,7 @@ public class TextForElectricbox : MonoBehaviour
                 dialog.text = "Press 'T'"; //Gör så att om du går in i colliderna så kommer texten "press T" komma fram
             }
             showText = true; //Gör att om man är innanför collisonen så är showText sann
+            Debug.Log("Showtext");
         }
     }
     private void OnTriggerExit(Collider collision)
@@ -65,5 +67,7 @@ public class TextForElectricbox : MonoBehaviour
             showText = false; //Showtext blir false
         }
     }
+
+    
 }
 
