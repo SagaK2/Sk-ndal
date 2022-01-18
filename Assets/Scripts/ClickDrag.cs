@@ -8,11 +8,13 @@ public class ClickDrag : MonoBehaviour
     RaycastHit hit;
 
     GameObject selectedObject;
-    GameObject selectedDoor;
+    public GameObject miniGame;
 
     bool isDragging;
 
     public Vector3 pos;
+
+    PlayerTrigger plY;
 
     //För att göra mini spelet i ellådan lite mindre buggigt (gör så att kuben åker tillbaka även om man håller in musen)
     
@@ -22,7 +24,12 @@ public class ClickDrag : MonoBehaviour
         isDragging = false;
     }
 
-    
+    public void MiniGame()
+    {
+        miniGame.SetActive(true);
+        //Fixa animation & så att man inte kan röra sig alls
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -31,17 +38,15 @@ public class ClickDrag : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                /*
                 string tag = hit.collider.gameObject.tag;
-                //print(tag); Tar bort den for the moment
-                if (hit.collider.gameObject.CompareTag("Door"))
+                print(tag); //Tar bort den for the moment
+                if (hit.collider.gameObject.CompareTag("ElectricBox"))
                 {
-                    selectedDoor = hit.collider.gameObject;
-                    print("knock knock");
-                    //selectedDoor.transform.rotation = (new Vector3(0, 100, 0));
+                    //selectedDoor = hit.collider.gameObject;
+                    MiniGame();
                 }
+
                 //Man kan skriva en kod för texten här
-                */
 
                 if (hit.collider != null)
                 {

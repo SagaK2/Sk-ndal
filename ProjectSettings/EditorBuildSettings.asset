@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 721cad77557b33d408fd70c22a2b8ab1
   - enabled: 1
+    path: Assets/Scenes/Emre och Jr.unity
+    guid: c6120fbccb49af04a964b89b53100da3
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 7576f64e8a0996d448bc9788d8bf74cd
   - enabled: 1

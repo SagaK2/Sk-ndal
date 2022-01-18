@@ -22,31 +22,33 @@ public class GhoulmarMovement : MonoBehaviour
 
     public void Reset()
     {
-        randomThings = Random.Range(1, 30);
+        print("reset");
+        timer = 0;
+        randomThings = Random.Range(1, 20);
     }
     void Update()
     {
-        
-
         timer += Time.deltaTime;
+        print(randomThings);
 
-        print("Searching: " + randomThings + "Velocity:" + rb.velocity + " ... Timer: " + timer);
-
-        if(animator.GetBool("Idle") && randomThings >= 10 && randomThings <= 20) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
+        if(randomThings >= 1 && randomThings <= 10) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
         {
+            print("looking");
             animator.SetBool("Looking", true);
             animator.SetBool("Idle", false);
             //Ville göra så att Ghoulmar randomly tittar runt om Idle animationen är igång
-            Reset();
+            
 
-        }else if(randomThings >= 20 && animator.GetBool("Looking") == false)
+        }else if(randomThings >= 10)
         {
+            print("walking");
             //Måste fixa i både kod och annat med float och transitions
             rb.velocity = new Vector3(0, 0, 2);
             animator.SetBool("Idle", false);
             animator.SetBool("Looking", false);
+            animator.SetBool("Walking", true);
+           
             timer = 0;
-            Reset();
             /*if ()
             {
                 Gör så att randomThings kan ändras ungefär hela tiden
@@ -54,6 +56,12 @@ public class GhoulmarMovement : MonoBehaviour
             */
 
         }
+
+        if (timer > 5)
+        {
+            Reset();
+        }
+
         /*else if(Raycast har hittat playern då ska den ändra velocity och börja springa){
             Fråga Tobias
         }*/

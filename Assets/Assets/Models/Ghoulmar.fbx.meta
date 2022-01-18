@@ -6,7 +6,13 @@ ModelImporter:
   - first:
       74: 7538471131225781754
     second: Ghoulmar Armature|ArmatureAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 1886820026795636259, guid: 91dda7514cbb6754881c3beaed77b07c,
+      type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
