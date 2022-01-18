@@ -8,6 +8,7 @@ public class GhoulmarMovement : MonoBehaviour
     //Sagas kod
     public Rigidbody rb;
     public Animator animator;
+    public Transform[] patrolpoints;
 
     float randomThings; //Används för att sätta igång olika animationer och annat
     float timer;
@@ -34,7 +35,7 @@ public class GhoulmarMovement : MonoBehaviour
         print("reset");
         timer = 0;
         randomThings = Random.Range(1, 10);
-        mob.updateRotation = false;
+        mob.updateRotation = true;
     }
 
     void Update()
@@ -43,7 +44,7 @@ public class GhoulmarMovement : MonoBehaviour
         print(randomThings);
         //För att kunna springa till spelaren om den är i räckhåll
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        transform.rotation = Quaternion.LookRotation(mob.velocity.normalized);
+       // transform.rotation = Quaternion.LookRotation(mob.velocity.normalized);
 
         if (distance < distanceGhoulmar)
         {
@@ -51,7 +52,9 @@ public class GhoulmarMovement : MonoBehaviour
             Vector3 dirToPlayer = transform.position - player.transform.position;
             Vector3 newPos = transform.position - dirToPlayer;
 
-            mob.SetDestination(newPos);
+            mob.SetDestination(player.transform.position);
+
+            //mob.SetDestination(newPos);
             mob.speed = 5;
             //Fråga Tobias hur man gör så att den alltid är faced mot playern 
             animator.SetBool("Running", true);
@@ -65,6 +68,7 @@ public class GhoulmarMovement : MonoBehaviour
         //Animationer till Ghoulmar
         if(randomThings >= 1 && randomThings <= 5) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
         {
+            
             //print("looking");
             animator.SetBool("Looking", true);
             animator.SetBool("Idle", false);
@@ -72,8 +76,9 @@ public class GhoulmarMovement : MonoBehaviour
 
         }else if(randomThings >= 5 && randomThings >= 10)
         {
+            mob.SetDestination(patrolpoints[0].position );
             //print("walking");
-            rb.velocity = new Vector3(0, 0, 2);
+            // rb.velocity = new Vector3(0, 0, 2);
             //rb.velocity = new Vector3( 0, 0, direction.z + speed);
             animator.SetBool("Idle", false);
             animator.SetBool("Looking", false);
@@ -97,7 +102,7 @@ public class GhoulmarMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             print("hit");
-            rb.velocity = new Vector3(direction.x * -1, 0, 0);
+           // rb.velocity = new Vector3(direction.x * -1, 0, 0);
         }
     }
 }
