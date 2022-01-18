@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 7576f64e8a0996d448bc9788d8bf74cd
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 1372d7328ee957d41a4b2b1466612482
   m_configObjects: {}
