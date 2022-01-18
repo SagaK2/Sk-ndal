@@ -23,4 +23,5 @@ public class LightSettings : MonoBehaviour
         //Gör så att float värdet stämmer in på sliderns float värde.
         lightStrenght = slider.value;
     }*/
+
 }

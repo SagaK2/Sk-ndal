@@ -34,15 +34,18 @@ public class GhoulmarMovement : MonoBehaviour
         print("reset");
         timer = 0;
         randomThings = Random.Range(1, 10);
+        mob.updateRotation = false;
     }
+
     void Update()
     {
         timer += Time.deltaTime;
         print(randomThings);
         //För att kunna springa till spelaren om den är i räckhåll
         float distance = Vector3.Distance(transform.position, player.transform.position);
+        transform.rotation = Quaternion.LookRotation(mob.velocity.normalized);
 
-        if(distance < distanceGhoulmar)
+        if (distance < distanceGhoulmar)
         {
 
             Vector3 dirToPlayer = transform.position - player.transform.position;
@@ -52,7 +55,6 @@ public class GhoulmarMovement : MonoBehaviour
             mob.speed = 5;
             //Fråga Tobias hur man gör så att den alltid är faced mot playern 
             animator.SetBool("Running", true);
-            print("run");
         }
         else
         {
@@ -67,7 +69,6 @@ public class GhoulmarMovement : MonoBehaviour
             animator.SetBool("Looking", true);
             animator.SetBool("Idle", false);
             //Ville göra så att Ghoulmar randomly tittar runt. Han glider runt?
-            
 
         }else if(randomThings >= 5 && randomThings >= 10)
         {
