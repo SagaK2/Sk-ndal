@@ -18,14 +18,14 @@ public class Movement : MonoBehaviour
     Vector3 Velocity;
     //variabel för gravitation
     public float gravity = -11;
-
+    //Låter mig använda ClickDrag variabler och sånt i detta skript. JR
+    public ClickDrag Clickish;
     //Vi måste göra så att man kan använda musen till att spela spelet - Saga
-    bool miniGame;
+    public ClickDrag clickDrag;
     void Start()
     {
         //gör så man inte ser musen. JR
         Cursor.lockState = CursorLockMode.Locked;
-        miniGame = false;
     }
 
     // Update is called once per frame
@@ -59,5 +59,10 @@ public class Movement : MonoBehaviour
         Velocity.y += gravity * Time.deltaTime;
         //Rör spelaren 
         Player.Move(Velocity * Time.deltaTime);
+
+      if (Clickish.miniGameActive) 
+      {
+            Cursor.lockState = CursorLockMode.None; 
+      }
     }
 }

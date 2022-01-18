@@ -11,13 +11,13 @@ public class ClickDrag : MonoBehaviour
     public GameObject miniGame;
 
     bool isDragging;
+    public bool miniGameActive;
 
     public Vector3 pos;
 
     PlayerTrigger plY;
 
     //För att göra mini spelet i ellådan lite mindre buggigt (gör så att kuben åker tillbaka även om man håller in musen)
-    
 
     void Start()
     {
@@ -27,6 +27,7 @@ public class ClickDrag : MonoBehaviour
     public void MiniGame()
     {
         miniGame.SetActive(true);
+        miniGameActive = true;
         //Fixa animation & så att man inte kan röra sig alls
     }
 

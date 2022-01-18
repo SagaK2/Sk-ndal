@@ -22,6 +22,6 @@ public class GameOver : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
     }
 }

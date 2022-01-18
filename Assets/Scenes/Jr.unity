@@ -1344,6 +1344,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghoulmar
       objectReference: {fileID: 0}
+    - target: {fileID: 8806668255600736245, guid: 5dd7cb1d293b4cc4e87b2b6261b9dfc2,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1868780709}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dd7cb1d293b4cc4e87b2b6261b9dfc2, type: 3}
 --- !u!1 &661747806 stripped
