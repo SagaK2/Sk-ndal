@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class GhoulmarMovement : MonoBehaviour
 {
     //Sagas kod
     public Rigidbody rb;
     public Animator animator;
-    public Transform[] patrolpoints;
 
     float randomThings; //Används för att sätta igång olika animationer och annat
     float timer;
-
-    Vector3 direction;
-    float speed = 2;
 
     //Rörelse runt mappen
     public GameObject player;
     public NavMeshAgent mob;
     public float distanceGhoulmar = 5;
+    public Transform[] patrolpoints;
 
     /*RaycastHit hit;
 
@@ -28,10 +26,13 @@ public class GhoulmarMovement : MonoBehaviour
     void Start()
     {
         mob.GetComponent<NavMeshAgent>();
+        animator.SetBool("Idle", true);
+        //Vill att man ska starta med att vara Idle
     }
 
     public void Reset()
     {
+        //Så att det blir variation mellan att titta runt och gå runt
         print("reset");
         timer = 0;
         randomThings = Random.Range(1, 10);
@@ -44,42 +45,34 @@ public class GhoulmarMovement : MonoBehaviour
         print(randomThings);
         //För att kunna springa till spelaren om den är i räckhåll
         float distance = Vector3.Distance(transform.position, player.transform.position);
-       // transform.rotation = Quaternion.LookRotation(mob.velocity.normalized);
 
         if (distance < distanceGhoulmar)
         {
-
-            Vector3 dirToPlayer = transform.position - player.transform.position;
-            Vector3 newPos = transform.position - dirToPlayer;
-
+            //Gör så att Ghoulmar alltid är faced mot spelaren när den jagar 
             mob.SetDestination(player.transform.position);
-
-            //mob.SetDestination(newPos);
             mob.speed = 5;
-            //Fråga Tobias hur man gör så att den alltid är faced mot playern 
+            
             animator.SetBool("Running", true);
         }
         else
         {
-            animator.SetBool("Running", false);
+            print("resettttt");
             Reset();
+            //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga
         }
 
         //Animationer till Ghoulmar
-        if(randomThings >= 1 && randomThings <= 5) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
+        if(randomThings > 1 && randomThings < 5) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
         {
-            
-            //print("looking");
             animator.SetBool("Looking", true);
             animator.SetBool("Idle", false);
-            //Ville göra så att Ghoulmar randomly tittar runt. Han glider runt?
+            //Ville göra så att Ghoulmar randomly tittar runt
 
-        }else if(randomThings >= 5 && randomThings >= 10)
+        }else if(randomThings > 5 && randomThings < 10)
         {
-            mob.SetDestination(patrolpoints[0].position );
-            //print("walking");
-            // rb.velocity = new Vector3(0, 0, 2);
-            //rb.velocity = new Vector3( 0, 0, direction.z + speed);
+            print("Go Ghoulmar, go Ghoulmar!");
+            mob.SetDestination(patrolpoints[0].position);
+
             animator.SetBool("Idle", false);
             animator.SetBool("Looking", false);
             animator.SetBool("Walking", true);
@@ -89,20 +82,20 @@ public class GhoulmarMovement : MonoBehaviour
         if (timer > 5)
         {
             Reset();
+            //Den här if-satsen gör så att variationen blir större. Så att den inte gör en animation för länge
         }
-
-        /*else if(Raycast har hittat playern då ska den ändra velocity och börja springa){
-            Fråga Tobias
-        }*/
 
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            print("hit");
-           // rb.velocity = new Vector3(direction.x * -1, 0, 0);
+            SceneManager.LoadScene(5);
+
+        }else if (collision.gameObject.CompareTag("Wall"))
+        {
+            print("ouch");
         }
     }
 }

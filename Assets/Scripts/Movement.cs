@@ -20,8 +20,6 @@ public class Movement : MonoBehaviour
     public float gravity = -11;
     //Låter mig använda ClickDrag variabler och sånt i detta skript. JR
     public ClickDrag Clickish;
-    //Vi måste göra så att man kan använda musen till att spela spelet - Saga
-    public ClickDrag clickDrag;
     void Start()
     {
         //gör så man inte ser musen. JR
