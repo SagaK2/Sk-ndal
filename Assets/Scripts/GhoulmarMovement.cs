@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GhoulmarMovement : MonoBehaviour
 {
@@ -11,50 +12,73 @@ public class GhoulmarMovement : MonoBehaviour
     float randomThings; //Används för att sätta igång olika animationer och annat
     float timer;
 
-    RaycastHit hit;
+    Vector3 direction;
+    float speed = 2;
 
-    readonly bool walking;
-    readonly bool running;
+    //Rörelse runt mappen
+    public GameObject player;
+    public NavMeshAgent mob;
+    public float distanceGhoulmar = 5;
+
+    /*RaycastHit hit;
+
+    bool walking;
+    bool running;*/
     void Start()
     {
-        randomThings = 10;
+        mob.GetComponent<NavMeshAgent>();
     }
 
     public void Reset()
     {
         print("reset");
         timer = 0;
-        randomThings = Random.Range(1, 20);
+        randomThings = Random.Range(1, 10);
+        mob.updateRotation = false;
     }
+
     void Update()
     {
         timer += Time.deltaTime;
         print(randomThings);
+        //För att kunna springa till spelaren om den är i räckhåll
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        transform.rotation = Quaternion.LookRotation(mob.velocity.normalized);
 
-        if(randomThings >= 1 && randomThings <= 10) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
+        if (distance < distanceGhoulmar)
         {
-            print("looking");
+
+            Vector3 dirToPlayer = transform.position - player.transform.position;
+            Vector3 newPos = transform.position - dirToPlayer;
+
+            mob.SetDestination(newPos);
+            mob.speed = 5;
+            //Fråga Tobias hur man gör så att den alltid är faced mot playern 
+            animator.SetBool("Running", true);
+        }
+        else
+        {
+            animator.SetBool("Running", false);
+            Reset();
+        }
+
+        //Animationer till Ghoulmar
+        if(randomThings >= 1 && randomThings <= 5) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
+        {
+            //print("looking");
             animator.SetBool("Looking", true);
             animator.SetBool("Idle", false);
-            //Ville göra så att Ghoulmar randomly tittar runt om Idle animationen är igång
-            
+            //Ville göra så att Ghoulmar randomly tittar runt. Han glider runt?
 
-        }else if(randomThings >= 10)
+        }else if(randomThings >= 5 && randomThings >= 10)
         {
-            print("walking");
-            //Måste fixa i både kod och annat med float och transitions
+            //print("walking");
             rb.velocity = new Vector3(0, 0, 2);
+            //rb.velocity = new Vector3( 0, 0, direction.z + speed);
             animator.SetBool("Idle", false);
             animator.SetBool("Looking", false);
             animator.SetBool("Walking", true);
            
-            timer = 0;
-            /*if ()
-            {
-                Gör så att randomThings kan ändras ungefär hela tiden
-            }
-            */
-
         }
 
         if (timer > 5)
@@ -66,5 +90,14 @@ public class GhoulmarMovement : MonoBehaviour
             Fråga Tobias
         }*/
 
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            print("hit");
+            rb.velocity = new Vector3(direction.x * -1, 0, 0);
+        }
     }
 }
