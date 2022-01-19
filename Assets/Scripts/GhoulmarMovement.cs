@@ -17,6 +17,7 @@ public class GhoulmarMovement : MonoBehaviour
     public NavMeshAgent mob;
     public float distanceGhoulmar = 5;
     public Transform[] patrolpoints;
+    int currentPatrolPoint;
 
     /*RaycastHit hit;
 
@@ -49,45 +50,52 @@ public class GhoulmarMovement : MonoBehaviour
 
         if (distance < distanceGhoulmar)
         {
+            print("ahhh");
             //Gör så att Ghoulmar alltid är faced mot spelaren när den jagar 
             mob.SetDestination(player.transform.position);
             mob.speed = 5;
-            
-            animator.SetBool("Running", true);
+            mob.isStopped = false;
+
+            // animator.SetBool("Running", true);
         }
         else
         {
             print("yes");
             //Reset();
             //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga
-        }
-
-        //Animationer till Ghoulmar
-        if(randomThings > 1 && randomThings < 5) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
-        {
-            mob.isStopped = true;
-            animator.SetBool("Looking", true);
-            animator.SetBool("Idle", false);
-            animator.SetBool("Walking", false);
-            //Ville göra så att Ghoulmar randomly tittar runt
-            
-        }
-        else if(randomThings > 4 && randomThings < 10)
-        {
-            print("Go Ghoulmar, go Ghoulmar!");
-            mob.SetDestination(patrolpoints[0].position);
-
-            if(mob.transform.position == patrolpoints[0].position)
+            //Animationer till Ghoulmar
+            if (randomThings > 1 && randomThings < 5) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
             {
-                print("next");
-                mob.SetDestination(patrolpoints[1].position);
-            }
+                mob.isStopped = true;
+                animator.SetBool("Looking", true);
+                animator.SetBool("Idle", false);
+                animator.SetBool("Walking", false);
+                //Ville göra så att Ghoulmar randomly tittar runt
 
-            animator.SetBool("Idle", false);
-            animator.SetBool("Looking", false);
-            animator.SetBool("Walking", true);
-           
+            }
+            else if (randomThings > 4 && randomThings < 10)
+            {
+                print("Go Ghoulmar, go Ghoulmar!");
+                mob.SetDestination(patrolpoints[currentPatrolPoint].position);
+
+                if (Vector3.Distance(mob.transform.position, patrolpoints[currentPatrolPoint].position) < 0.05f)
+                {
+                    print("next");
+                    currentPatrolPoint++;
+                    if (currentPatrolPoint > patrolpoints.Length - 1)
+                    {
+                        currentPatrolPoint = 0;
+                    }
+                }
+
+                animator.SetBool("Idle", false);
+                animator.SetBool("Looking", false);
+                animator.SetBool("Walking", true);
+
+            }
         }
+
+        
 
         if (timer > 5)
         {
@@ -99,10 +107,20 @@ public class GhoulmarMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        print("collider");
         if (collision.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(5);
 
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        print("hit");
+        if (hit.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(5);
         }
     }
 }

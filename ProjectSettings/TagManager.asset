@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - ElectricBox
   - talk
+  - Ghoulmar
   layers:
   - Default
   - TransparentFX

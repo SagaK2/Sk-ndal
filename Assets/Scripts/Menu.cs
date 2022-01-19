@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
 
     public bool timeIsRunning = false;
 
+    public Animator buttonAnimator;
 
     //Kommer använda funktionerna(?) med knapparna i Unity - Saga 
 

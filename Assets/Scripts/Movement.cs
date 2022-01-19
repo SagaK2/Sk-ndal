@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class Movement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //referens till mouse x och mouse y från unity inputmanager. deltaTime gör så rotationen är oberoende av FPS. JR
@@ -60,7 +60,17 @@ public class Movement : MonoBehaviour
 
       if (Clickish.miniGameActive) 
       {
-            Cursor.lockState = CursorLockMode.None; 
+            Cursor.lockState = CursorLockMode.None;
+            //Vector3 playPos = transform.position - Clickish.miniGameActive; Gör så att den stannar på en och samma position
       }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        print("hit");
+        if (hit.gameObject.CompareTag("Ghoulmar"))
+        {
+            SceneManager.LoadScene(5);
+        }
     }
 }
