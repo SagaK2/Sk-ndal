@@ -40,7 +40,6 @@ public class ClickDrag : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 string tag = hit.collider.gameObject.tag;
-                print(tag); //Tar bort den for the moment
                 if (hit.collider.gameObject.CompareTag("ElectricBox"))
                 {
                     //selectedDoor = hit.collider.gameObject;

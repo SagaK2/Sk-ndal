@@ -603,6 +603,7 @@ Transform:
   m_Children:
   - {fileID: 764632076}
   - {fileID: 1230369825}
+  - {fileID: 1332326452}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1421,6 +1422,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02000003, z: 0.02}
   m_Center: {x: -0.0009973906, y: -7.637735e-10, z: -0.0000000018332601}
+--- !u!1 &1332326451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332326452}
+  m_Layer: 0
+  m_Name: PlayerPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1332326452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332326451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.6, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 319124388}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1341643147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8835,7 +8866,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2193423312281382723}
   m_LocalRotation: {x: -0.64085644, y: 0.29883623, z: 0.29883623, w: 0.64085644}
-  m_LocalPosition: {x: -4.819687, y: -1, z: 0}
+  m_LocalPosition: {x: -4.819687, y: -1.26, z: 0}
   m_LocalScale: {x: 6503.84, y: 4132.3096, z: 4132.3096}
   m_Children: []
   m_Father: {fileID: 543450652595164626}
@@ -14335,7 +14366,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8806668254373522673}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b3e406244cd676746bec9f9f9ca66401, type: 3}
   m_Controller: {fileID: 9100000, guid: ad1989b7b8d426d42927031cc3572f2c, type: 2}
   m_CullingMode: 0
@@ -14361,12 +14392,13 @@ MonoBehaviour:
   animator: {fileID: 8806668254373522674}
   player: {fileID: 319124386}
   mob: {fileID: 8806668254373522677}
-  distanceGhoulmar: 10
+  distanceGhoulmar: 15
   patrolpoints:
   - {fileID: 452650772}
   - {fileID: 237006963}
   - {fileID: 4306643202009423688}
   - {fileID: 589897758582854851}
+  playerPoints: {fileID: 1332326452}
 --- !u!195 &8806668254373522677
 NavMeshAgent:
   m_ObjectHideFlags: 0

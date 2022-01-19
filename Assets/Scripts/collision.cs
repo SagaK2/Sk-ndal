@@ -13,7 +13,7 @@ public class collision : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        print("hit");
+
         if (hit.gameObject.CompareTag("talk"))
         {
             SceneManager.LoadScene(5);
