@@ -306,6 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2b2c1453eeaad4189a74e5634dc5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeRemaining: 600
+  timeIsRunning: 0
   optionMenu: {fileID: 738399934}
 --- !u!114 &154414523
 MonoBehaviour:
@@ -404,6 +406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9609142ecf9678b40ba354929fe42744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  directionalLight: {fileID: 686251266}
+  gameDirLight: {fileID: 8644312016900076592, guid: 51de96991797b354e80e384361b94869,
+    type: 3}
+  gamePonLight: {fileID: 7172065069313838040, guid: ead8aaf4bdb9a19409355f792cda1ca3,
+    type: 3}
+  slider: {fileID: 1905501438}
 --- !u!1 &166285276
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +1003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &738399935
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1013,7 +1021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: -42.2}
+  m_AnchoredPosition: {x: 70, y: -5.22}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &738399936
@@ -1198,7 +1206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &841671442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1807,8 +1815,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056411793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 31.908, z: -527}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 195, y: 31.908, z: 206}
+  m_LocalScale: {x: 200, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2820,7 +2828,7 @@ GameObject:
   - component: {fileID: 1905501437}
   - component: {fileID: 1905501438}
   m_Layer: 5
-  m_Name: LightSlider?
+  m_Name: LightSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

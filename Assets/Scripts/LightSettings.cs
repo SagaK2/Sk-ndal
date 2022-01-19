@@ -5,23 +5,21 @@ using UnityEngine;
 
 public class LightSettings : MonoBehaviour
 {
-    /*
-    //public Color myColor;
+    //Sagas kod
     public Light directionalLight;
+    public Light gameDirLight;
+    public Light gamePonLight;
+
     public Slider slider;
-
-    float lightStrenght;
-    void Start()
-    {
-
-        //directionalLight.color = myColor; (Pröva på i andra tillfällen kanske)
-        directionalLight.intensity = lightStrenght;
-    }
-
+    
     public void LightStrenght()
     {
-        //Gör så att float värdet stämmer in på sliderns float värde.
-        lightStrenght = slider.value;
-    }*/
+        //Varje gång slider värdet ändras, ändras styrkan på ljuset också
+        directionalLight.intensity = slider.value;
+        //Man vill också att det här ska gälla i spelet så jag har gjort ljusen från spelet till prefabs och gjort
+        // så att om ljuset i menyn ändras då ska ljusen i spelet ändras lika mycket
+        gameDirLight.intensity = directionalLight.intensity;
+        gamePonLight.intensity = directionalLight.intensity;
+    }
 
 }

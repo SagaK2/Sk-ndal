@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GhoulmarMovement : MonoBehaviour
 {
     //Sagas kod
-    public Rigidbody rb;
     public Animator animator;
 
     float randomThings; //Används för att sätta igång olika animationer och annat
@@ -28,6 +27,7 @@ public class GhoulmarMovement : MonoBehaviour
         mob.GetComponent<NavMeshAgent>();
         animator.SetBool("Idle", true);
         //Vill att man ska starta med att vara Idle
+        
     }
 
     public void Reset()
@@ -36,13 +36,14 @@ public class GhoulmarMovement : MonoBehaviour
         print("reset");
         timer = 0;
         randomThings = Random.Range(1, 10);
-        mob.updateRotation = true;
+        //mob.updateRotation = true;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
         print(randomThings);
+        mob.updateRotation = true;
         //För att kunna springa till spelaren om den är i räckhåll
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
@@ -56,22 +57,31 @@ public class GhoulmarMovement : MonoBehaviour
         }
         else
         {
-            print("resettttt");
-            Reset();
+            print("yes");
+            //Reset();
             //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga
         }
 
         //Animationer till Ghoulmar
         if(randomThings > 1 && randomThings < 5) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
         {
+            mob.isStopped = true;
             animator.SetBool("Looking", true);
             animator.SetBool("Idle", false);
+            animator.SetBool("Walking", false);
             //Ville göra så att Ghoulmar randomly tittar runt
-
-        }else if(randomThings > 5 && randomThings < 10)
+            
+        }
+        else if(randomThings > 4 && randomThings < 10)
         {
             print("Go Ghoulmar, go Ghoulmar!");
             mob.SetDestination(patrolpoints[0].position);
+
+            if(mob.transform.position == patrolpoints[0].position)
+            {
+                print("next");
+                mob.SetDestination(patrolpoints[1].position);
+            }
 
             animator.SetBool("Idle", false);
             animator.SetBool("Looking", false);
@@ -93,9 +103,6 @@ public class GhoulmarMovement : MonoBehaviour
         {
             SceneManager.LoadScene(5);
 
-        }else if (collision.gameObject.CompareTag("Wall"))
-        {
-            print("ouch");
         }
     }
 }
