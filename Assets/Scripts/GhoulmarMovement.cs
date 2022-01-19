@@ -29,7 +29,6 @@ public class GhoulmarMovement : MonoBehaviour
         mob.GetComponent<NavMeshAgent>();
         animator.SetBool("Idle", true);
         //Vill att man ska starta med att vara Idle
-        
     }
 
     public void Reset()
@@ -44,7 +43,6 @@ public class GhoulmarMovement : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        print(randomThings);
         mob.updateRotation = true;
         //För att kunna springa till spelaren om den är i räckhåll
         float distance = Vector3.Distance(transform.position, player.transform.position);
@@ -54,17 +52,15 @@ public class GhoulmarMovement : MonoBehaviour
             //Gör så att Ghoulmar alltid är faced mot spelaren när den jagar 
             //mob.SetDestination(player.transform.position);
             mob.SetDestination(playerPoints.position);
-            print("ahhh");
             mob.speed = 5;
             mob.isStopped = false;
-
             animator.SetBool("Running", true);
         }
         else
         {
             //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga
             //Animationer till Ghoulmar
-            if (randomThings > 1 && randomThings < 5) //Om animationen Idle är true och searching är större än 10 då ska Ghoulmar titta runt
+            if (randomThings > 1 && randomThings < 5) 
             {
                 mob.isStopped = true;
                 animator.SetBool("Looking", true);
@@ -75,11 +71,11 @@ public class GhoulmarMovement : MonoBehaviour
             }
             else if (randomThings > 4 && randomThings < 10)
             {
-                print("Go Ghoulmar, go Ghoulmar!");
                 mob.SetDestination(patrolpoints[currentPatrolPoint].position);
 
-                if (Vector3.Distance(mob.transform.position, patrolpoints[currentPatrolPoint].position) < 0.05f)
+                if (Vector3.Distance(mob.transform.position, patrolpoints[currentPatrolPoint].position) < 0.03f)
                 {
+                    //Varför händer inte den här koden?
                     print("next");
                     currentPatrolPoint++;
                     if (currentPatrolPoint > patrolpoints.Length - 1)
@@ -91,7 +87,6 @@ public class GhoulmarMovement : MonoBehaviour
                 animator.SetBool("Idle", false);
                 animator.SetBool("Looking", false);
                 animator.SetBool("Walking", true);
-
             }
         }
 
@@ -105,7 +100,7 @@ public class GhoulmarMovement : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    /*void OnCollisionEnter(Collision collision)
     {
         print("collider");
         if (collision.gameObject.CompareTag("Player"))
@@ -122,5 +117,5 @@ public class GhoulmarMovement : MonoBehaviour
         {
             SceneManager.LoadScene(5);
         }
-    }
+    }*/
 }

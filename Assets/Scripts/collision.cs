@@ -5,16 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class collision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
 
-        if (hit.gameObject.CompareTag("talk"))
+        if (hit.gameObject.CompareTag("Ghoulmar"))
         {
             SceneManager.LoadScene(5);
         }

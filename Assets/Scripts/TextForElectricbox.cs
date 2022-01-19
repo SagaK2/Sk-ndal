@@ -37,17 +37,14 @@ public class TextForElectricbox : MonoBehaviour
                     dialog.text = "Try another electric box";
 
                     break;
-                
               
             }
-
-
         }
-
     }
 
-    private void OnTriggerStay(Collider collision)
+    public void OnTriggerStay(Collider collision)
     {
+        print("ele");
         if (collision.transform.tag == "talk") //Om man är inaför collisonen
         {
             text.SetActive(true); //Kommer UI:n inte att synas
@@ -59,7 +56,7 @@ public class TextForElectricbox : MonoBehaviour
             Debug.Log("Showtext");
         }
     }
-    private void OnTriggerExit(Collider collision)
+    public void OnTriggerExit(Collider collision)
     {
         if (collision.transform.tag == "talk")  //Om man inte är inaför collisonen
         {
