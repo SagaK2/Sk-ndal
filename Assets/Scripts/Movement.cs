@@ -57,7 +57,7 @@ public class Movement : MonoBehaviour
         Velocity.y += gravity * Time.deltaTime;
         //Rör spelaren 
         Player.Move(Velocity * Time.deltaTime);
-
+      //Ifall minigamet spelas så kan man se musen igen. JR  
       if (Clickish.miniGameActive) 
       {
             Cursor.lockState = CursorLockMode.None;
