@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     public float gravity = -11;
     //Låter mig använda ClickDrag variabler och sånt i detta skript. JR
     public ClickDrag Clickish;
+   
     void Start()
     {
         //gör så man inte ser musen. JR
@@ -29,42 +30,46 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        //referens till mouse x och mouse y från unity inputmanager. deltaTime gör så rotationen är oberoende av FPS. JR
-        float mouseX = Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * Sensitivity * Time.deltaTime;
-        //Varje frame minskar x-rotationen baserat på mouse Y. JR
-        Xpos -= mouseY;
-        //Gör så man inte kan bryta nacken när man kollar bakom sig på Y-axeln. JR
-        Xpos = Mathf.Clamp(Xpos, -90f, 90f);
-        //låter dig rotera (kolla runt in-game). JR
-        transform.localRotation = Quaternion.Euler(Xpos, -182, 0f);
-        //Rotera runt spelarens Y-axel när man rör runt musen på X-axeln. JR
-        spelare.Rotate(Vector3.up * mouseX);
-
-        //Koden Nedan är för att faktiskt röra sig. Borde fungera med kontroll också. JR
-
-        //referenser till inputmanager igen. JR
-        float Zmovement = Input.GetAxis("Vertical");
-        float xmovement = Input.GetAxis("Horizontal");
-        //Väljer en riktning som är i förhållande till spelaren (alltså vänster eller höger istället för väst eller öst). JR
-        Vector3 rörelse = transform.right * xmovement + transform.forward * Zmovement;
-        //Faktiskt rör oss åt den riktningen. Detta gör också att vi inte rör oss snabbare ifall vi har högre FPS. JR
-        Player.Move(rörelse*speed*Time.deltaTime);
-
-        //koden nedan är för gravitation. JR
-
-        //våran fart på y-axeln är gravitationen. JR
-        Velocity.y += gravity * Time.deltaTime;
-        //Rör spelaren 
-        Player.Move(Velocity * Time.deltaTime);
-
-      //Ifall minigamet spelas så kan man se musen igen. JR  
+        // Skapar en else sats och flyttar movement för att begränsa beteende när spelet är aktivt - Saga
       if (Clickish.miniGameActive) 
       {
+            //Ifall minigamet spelas så kan man se musen igen. JR  
             Cursor.lockState = CursorLockMode.None;
+            // Spelaren kan inte röra på sig eller titta runt omkring när hen spelar. - Saga
             Player.Move(Velocity * 0);
-            print("Velocity: " + Velocity);
-            //Vector3 playPos = transform.position - Clickish.miniGameActive; Gör så att den stannar på en och samma position
+            // Spelaren flyttas för att se spelet i full skärm - Saga
+            //spelare.transform.position = new Vector3();
+           
+      } else
+      { 
+            //referens till mouse x och mouse y från unity inputmanager. deltaTime gör så rotationen är oberoende av FPS. JR
+            float mouseX = Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * Sensitivity * Time.deltaTime;
+            //Varje frame minskar x-rotationen baserat på mouse Y. JR
+            Xpos -= mouseY;
+            //Gör så man inte kan bryta nacken när man kollar bakom sig på Y-axeln. JR
+            Xpos = Mathf.Clamp(Xpos, -90f, 90f);
+            //låter dig rotera (kolla runt in-game). JR
+            transform.localRotation = Quaternion.Euler(Xpos, -182, 0f);
+            //Rotera runt spelarens Y-axel när man rör runt musen på X-axeln. JR
+            spelare.Rotate(Vector3.up * mouseX);
+
+            //Koden Nedan är för att faktiskt röra sig. Borde fungera med kontroll också. JR
+
+            //referenser till inputmanager igen. JR
+            float Zmovement = Input.GetAxis("Vertical");
+            float xmovement = Input.GetAxis("Horizontal");
+            //Väljer en riktning som är i förhållande till spelaren (alltså vänster eller höger istället för väst eller öst). JR
+            Vector3 rörelse = transform.right * xmovement + transform.forward * Zmovement;
+            //Faktiskt rör oss åt den riktningen. Detta gör också att vi inte rör oss snabbare ifall vi har högre FPS. JR
+            Player.Move(rörelse * speed * Time.deltaTime);
+
+            //koden nedan är för gravitation. JR
+
+            //våran fart på y-axeln är gravitationen. JR
+            Velocity.y += gravity * Time.deltaTime;
+            //Rör spelaren 
+            Player.Move(Velocity * Time.deltaTime);
       }
     }
 

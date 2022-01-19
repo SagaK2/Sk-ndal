@@ -185,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.06
+      value: 22.059998
       objectReference: {fileID: 0}
     - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
@@ -195,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
@@ -205,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
@@ -235,12 +235,17 @@ PrefabInstance:
     - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.78
+      value: 0.78000027
       objectReference: {fileID: 0}
     - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4500002
       objectReference: {fileID: 0}
     - target: {fileID: 2332671499930966607, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
         type: 3}
@@ -1523,6 +1528,9 @@ MonoBehaviour:
   speed: 12
   gravity: -11
   Clickish: {fileID: 315786932}
+  collider: {fileID: 2015962468}
+  elevation: 0
+  cameraDistance: 2
 --- !u!81 &1230369827
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2266,6 +2274,12 @@ BoxCollider:
 --- !u!1 &2015962466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2332671498840966931, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
+    type: 3}
+  m_PrefabInstance: {fileID: 41076359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2015962468 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2332671498840966928, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
     type: 3}
   m_PrefabInstance: {fileID: 41076359}
   m_PrefabAsset: {fileID: 0}
@@ -14665,7 +14679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &8806668254373522674
 Animator:
   serializedVersion: 3
