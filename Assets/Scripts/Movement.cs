@@ -47,7 +47,13 @@ public class Movement : MonoBehaviour
 
       } else
       {
-            Player.Move(Velocity);
+            //referenser till inputmanager igen. JR
+            float Zmovement = Input.GetAxis("Vertical");
+            float xmovement = Input.GetAxis("Horizontal");
+            //Väljer en riktning som är i förhållande till spelaren (alltså vänster eller höger istället för väst eller öst). JR
+            Vector3 rörelse = transform.right * xmovement + transform.forward * Zmovement;
+            //Faktiskt rör oss åt den riktningen. Detta gör också att vi inte rör oss snabbare ifall vi har högre FPS. JR
+            Player.Move(rörelse * speed * Time.deltaTime);
             PlayerMovement();
       }
 
