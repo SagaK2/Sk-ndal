@@ -74,7 +74,7 @@ public class GhoulmarMovement : MonoBehaviour
             {
                 mob.SetDestination(patrolpoints[currentPatrolPoint].position);
 
-                if (Vector3.Distance(mob.transform.position, patrolpoints[currentPatrolPoint].position) < 0.03f)
+                if (Vector3.Distance(mob.transform.position, patrolpoints[currentPatrolPoint].position) < 0.1f)
                 {
                     //Varför händer inte den här koden?
                     print("next");

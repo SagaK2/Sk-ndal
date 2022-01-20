@@ -274,6 +274,12 @@ PrefabInstance:
       objectReference: {fileID: 5557995298970761351}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908, type: 3}
+--- !u!4 &41076360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2332671498840966935, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
+    type: 3}
+  m_PrefabInstance: {fileID: 41076359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &76317063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,9 +1534,8 @@ MonoBehaviour:
   speed: 12
   gravity: -11
   Clickish: {fileID: 315786932}
-  collider: {fileID: 2015962468}
-  elevation: 0
-  cameraDistance: 2
+  offset: {x: 0, y: 0, z: 0}
+  gameTarget: {fileID: 41076360}
 --- !u!81 &1230369827
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2274,12 +2279,6 @@ BoxCollider:
 --- !u!1 &2015962466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2332671498840966931, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
-    type: 3}
-  m_PrefabInstance: {fileID: 41076359}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &2015962468 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 2332671498840966928, guid: 1b64d4afdb19c7a49a97a0f4fb3fc908,
     type: 3}
   m_PrefabInstance: {fileID: 41076359}
   m_PrefabAsset: {fileID: 0}
@@ -14679,7 +14678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &8806668254373522674
 Animator:
   serializedVersion: 3
