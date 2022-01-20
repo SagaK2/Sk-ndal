@@ -15159,7 +15159,7 @@ MonoBehaviour:
   - {fileID: 237006963}
   - {fileID: 4306643202009423688}
   - {fileID: 589897758582854851}
-  playerPoints: {fileID: 1332326452}
+  playerPoint: {fileID: 1332326452}
 --- !u!195 &8806668254373522677
 NavMeshAgent:
   m_ObjectHideFlags: 0
