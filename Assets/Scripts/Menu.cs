@@ -48,6 +48,6 @@ public class Menu : MonoBehaviour
     public /*virtual*/ void EndGame()
     {
         Application.Quit();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }
