@@ -64,7 +64,8 @@ public class PlayerTrigger : MonoBehaviour
             lampLight.color = lampColor;
             //Lampan ska lysa grönt, animation
             SceneManager.LoadScene(0);
-            
+            Cursor.lockState = CursorLockMode.None;
+
         }
     }
 

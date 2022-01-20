@@ -56,8 +56,9 @@ public class GhoulmarMovement : MonoBehaviour
             mob.isStopped = false;
             animator.SetBool("Running", true);
 
-            if(Vector3.Distance(mob.transform.position, playerPoint.position) < 0.1f)
+            if(Vector3.Distance(mob.transform.position, playerPoint.position) < 0.4f)
             {
+                //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
                 SceneManager.LoadScene(4);
             }
         }

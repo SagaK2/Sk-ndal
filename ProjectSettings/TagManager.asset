@@ -9,6 +9,7 @@ TagManager:
   - talk
   - Ghoulmar
   - ToClose
+  - ToBeContinued
   layers:
   - Default
   - TransparentFX

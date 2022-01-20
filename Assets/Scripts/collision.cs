@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class collision : MonoBehaviour
 {
     //Sagas kod
-    public GameObject text;
+    public GameObject toClose;
+    public GameObject toBeContinued;
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -19,12 +19,18 @@ public class collision : MonoBehaviour
         }else if (hit.gameObject.CompareTag("ToClose"))
         {
             //Man är för nära skåpet när man nuddar denna collider. Därför poppar det upp en text som säger att an inte borde vara det
-            text.SetActive(true);
+            toClose.SetActive(true);
+
+        }else if (hit.gameObject.CompareTag("ToBeContinued"))
+        {
+            //De här lådorna fungerar inte just nu
+            toBeContinued.SetActive(true);
         }
         else
         {
             //Man ska annars inte se texten eller när man är för nära/nuddar vid collidern
-            text.SetActive(false);
+            toClose.SetActive(false);
+            toBeContinued.SetActive(false);
         }
     }
 }

@@ -18,7 +18,7 @@ public class Menu : MonoBehaviour
     public /*virtual jag vet inte om vi vill ha en pausmeny än, annars kan den scripten ära från denna*/ void StartGame()
     {
         SceneManager.LoadScene(1);
-
+        Cursor.lockState = CursorLockMode.Locked;
         timeIsRunning = true;
     }
 
