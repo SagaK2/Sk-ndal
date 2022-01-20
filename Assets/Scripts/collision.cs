@@ -10,7 +10,7 @@ public class collision : MonoBehaviour
 
         if (hit.gameObject.CompareTag("Ghoulmar"))
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(6);
         }
     }
 }

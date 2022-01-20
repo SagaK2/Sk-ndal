@@ -32,7 +32,6 @@ public class Menu : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timeIsRunning = false;
                 EndGame();

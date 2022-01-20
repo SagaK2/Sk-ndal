@@ -35,7 +35,6 @@ public class GhoulmarMovement : MonoBehaviour
     public void Reset()
     {
         //Så att det blir variation mellan att titta runt och gå runt
-        print("reset");
         timer = 0;
         randomThings = Random.Range(1, 10);
         //mob.updateRotation = true;
