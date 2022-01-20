@@ -14,12 +14,12 @@ public class Menu : MonoBehaviour
     //Kommer använda funktionerna(?) med knapparna i Unity - Saga 
 
     public GameObject optionMenu;
+
     public /*virtual jag vet inte om vi vill ha en pausmeny än, annars kan den scripten ära från denna*/ void StartGame()
     {
         SceneManager.LoadScene(1);
 
         timeIsRunning = true;
-
     }
 
     void Update()
@@ -40,9 +40,14 @@ public class Menu : MonoBehaviour
         }
 
     }
+
+    public void ChangingScene()
+    {
+        SceneManager.LoadScene(2);
+    }
     public /*virtual*/ void EndGame()
     {
         Application.Quit();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
 }
