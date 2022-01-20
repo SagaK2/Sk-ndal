@@ -10,7 +10,7 @@ public class ClickDrag : MonoBehaviour
     GameObject selectedObject;
     public GameObject miniGame;
 
-    bool isDragging;
+    public static bool isDragging;
     public bool miniGameActive;
 
     public Vector3 pos;
@@ -18,7 +18,7 @@ public class ClickDrag : MonoBehaviour
 
     //För att göra mini spelet i ellådan lite mindre buggigt (gör så att kuben åker tillbaka även om man håller in musen)
 
-    void Start()
+    public void Start()
     {
         isDragging = false;
     }
@@ -32,6 +32,7 @@ public class ClickDrag : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -60,16 +61,22 @@ public class ClickDrag : MonoBehaviour
                 }
             }
 
-        }else if (Input.GetMouseButtonUp(0))
+        }/*else if (Input.GetMouseButtonUp(0))
         {
             isDragging = false;
-        }
+        }*/
 
         if (isDragging)
         {
+            float horizontal = Input.GetAxis("Mouse X");
+            float vertical = Input.GetAxis("Mouse Y");
+            selectedObject.transform.localPosition += new Vector3(horizontal, vertical, 0) * 10 * Time.deltaTime;
+            /*
             pos = MousePos();
             selectedObject.transform.position = pos;
+            selectedObject.transform.localPosition = new Vector3(selectedObject.transform.localPosition.x, selectedObject.transform.localPosition.y,-0.07f);
             //selectedObject.transform.localPosition = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 0);
+            */
         }
         
         if (PlayerTrigger.returnHome)
@@ -83,7 +90,6 @@ public class ClickDrag : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Mathf.Abs(Camera.main.transform.position.z);
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        //mousePos.z = 0;
         
         return mousePos;
     }
