@@ -22,6 +22,8 @@ public class Movement : MonoBehaviour
     //Låter mig använda ClickDrag variabler och sånt i detta skript. JR
     public ClickDrag Clickish;
 
+    public GameObject model;
+
     public Vector3 offset;
     public Transform gameTarget;
 
@@ -36,6 +38,7 @@ public class Movement : MonoBehaviour
         // Skapar en else sats och flyttar movement för att begränsa beteende när spelet är aktivt - Saga
       if (Clickish.miniGameActive) 
       {
+            model.SetActive(false);
             //Ifall minigamet spelas så kan man se musen igen. JR  
             Cursor.lockState = CursorLockMode.None;
             // Spelaren kan inte röra på sig eller titta runt omkring när hen spelar. - Saga
@@ -44,16 +47,15 @@ public class Movement : MonoBehaviour
             transform.position = gameTarget.position + (offset);
             transform.LookAt(gameTarget);
             // Spelaren flyttas för att se spelet i full skärm - Saga
+            //spelare.transform.position = new Vector3();
 
       } else
       {
-            //referenser till inputmanager igen. JR
-            float Zmovement = Input.GetAxis("Vertical");
-            float xmovement = Input.GetAxis("Horizontal");
-            //Väljer en riktning som är i förhållande till spelaren (alltså vänster eller höger istället för väst eller öst). JR
-            Vector3 rörelse = transform.right * xmovement + transform.forward * Zmovement;
-            //Faktiskt rör oss åt den riktningen. Detta gör också att vi inte rör oss snabbare ifall vi har högre FPS. JR
-            Player.Move(rörelse * speed * Time.deltaTime);
+            if (model.activeSelf == false)
+            {
+                model.SetActive(true);
+            }
+
             PlayerMovement();
       }
 

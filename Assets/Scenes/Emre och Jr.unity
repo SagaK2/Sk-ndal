@@ -1234,6 +1234,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neco Arc
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86f2ed93de13ed94fbd47fb91259113f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1129496810705857465, guid: 86f2ed93de13ed94fbd47fb91259113f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1749,6 +1754,7 @@ MonoBehaviour:
   speed: 12
   gravity: -11
   Clickish: {fileID: 315786932}
+  model: {fileID: 1792334870}
   offset: {x: -9, y: 0, z: 0}
   gameTarget: {fileID: 41076360}
 --- !u!81 &1230369827
@@ -2335,6 +2341,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784586721}
   m_CullTransparentMesh: 0
+--- !u!1 &1792334870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86f2ed93de13ed94fbd47fb91259113f,
+    type: 3}
+  m_PrefabInstance: {fileID: 764632075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1836966591
 BoxCollider:
   m_ObjectHideFlags: 0
