@@ -22,6 +22,8 @@ public class Movement : MonoBehaviour
     //Låter mig använda ClickDrag variabler och sånt i detta skript. JR
     public ClickDrag Clickish;
 
+    public GameObject model;
+
     public Vector3 offset;
     public Transform gameTarget;
 
@@ -36,6 +38,7 @@ public class Movement : MonoBehaviour
         // Skapar en else sats och flyttar movement för att begränsa beteende när spelet är aktivt - Saga
       if (Clickish.miniGameActive) 
       {
+            model.SetActive(false);
             //Ifall minigamet spelas så kan man se musen igen. JR  
             Cursor.lockState = CursorLockMode.None;
             // Spelaren kan inte röra på sig eller titta runt omkring när hen spelar. - Saga
@@ -48,6 +51,11 @@ public class Movement : MonoBehaviour
 
       } else
       {
+            if (model.activeSelf == false)
+            {
+                model.SetActive(true);
+            }
+
             PlayerMovement();
       }
 

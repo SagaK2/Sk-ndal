@@ -21,6 +21,7 @@ public class ClickDrag : MonoBehaviour
     public void Start()
     {
         isDragging = false;
+        miniGameActive = false;
     }
 
     public void MiniGame()
