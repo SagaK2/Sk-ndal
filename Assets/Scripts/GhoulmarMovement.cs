@@ -8,7 +8,8 @@ public class GhoulmarMovement : MonoBehaviour
 {
     //Sagas kod
     public Animator animator;
-
+    //Låter mig använda andra variabler i detta skript. JR
+    public GhoulmarSounds Ljud;
     float randomThings; //Används för att sätta igång olika animationer och annat
     float timer;
 
