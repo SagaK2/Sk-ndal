@@ -22,7 +22,7 @@ public class TextForElectricbox : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyUp(KeyCode.T) && showText)//Om man klickar T och Showtext är sann?
+        if (Input.GetKeyUp(KeyCode.E) && showText)//Om man klickar T och Showtext är sann?
         {
             dialogcounter += 1; //Dialogcounter ökar med en varje gång man trycker på T
 
@@ -50,7 +50,7 @@ public class TextForElectricbox : MonoBehaviour
             text.SetActive(true); //Kommer UI:n inte att synas
             if (!showText) //Om showtexten är false
             {
-                dialog.text = "Press 'T'"; //Gör så att om du går in i colliderna så kommer texten "press T" komma fram
+                dialog.text = "Press 'E'"; //Gör så att om du går in i colliderna så kommer texten "press T" komma fram
             }
             showText = true; //Gör att om man är innanför collisonen så är showText sann
             Debug.Log("Showtext");
