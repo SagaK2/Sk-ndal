@@ -14,6 +14,11 @@ public class PlayerTrigger : MonoBehaviour
     public Color lampColor;
     //Gjorde den public så att den inte ändras, det var så att färgen ändrades lite här och där. 
 
+    public ClickDrag clickDrag;
+    public Movement movement;
+
+    public GameObject ghoulmar;
+
     void Start()
     {
         startPos = transform.position;
@@ -36,6 +41,7 @@ public class PlayerTrigger : MonoBehaviour
             transform.position = startPos;
         }
     }
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.CompareTag("Wall"))
@@ -45,10 +51,18 @@ public class PlayerTrigger : MonoBehaviour
         }
         else if (collider.gameObject.CompareTag("Finish"))
         {
+            clickDrag.Start();
+            //Då sätts isDragging till false eftersom den annars sätts till false
+            movement.Start();
+            movement.PlayerMovement();
+            //Som sätter curser lock till locked mode
+            ghoulmar.SetActive(true);
+            //Ghoulmar sätts på
             miniGame.SetActive(false);
             //röd FF0000
             lampLight.color = lampColor;
-            //Lampan ska lysa grönt
+            //Lampan ska lysa grönt, animation
+            
         }
     }
 
