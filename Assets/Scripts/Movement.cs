@@ -21,11 +21,15 @@ public class Movement : MonoBehaviour
     public float gravity = -11;
     //Låter mig använda ClickDrag variabler och sånt i detta skript. JR
     public ClickDrag Clickish;
-   
+
+    public Vector3 offset;
+    public Transform gameTarget;
+
     void Start()
     {
         //gör så man inte ser musen. JR
         Cursor.lockState = CursorLockMode.Locked;
+        offset = gameTarget.position - transform.position;
     }
 
     void Update()
@@ -37,10 +41,12 @@ public class Movement : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             // Spelaren kan inte röra på sig eller titta runt omkring när hen spelar. - Saga
             Player.Move(Velocity * 0);
+            
+            transform.position = gameTarget.position - offset;
             // Spelaren flyttas för att se spelet i full skärm - Saga
             //spelare.transform.position = new Vector3();
-           
-      } else
+
+        } else
       { 
             //referens till mouse x och mouse y från unity inputmanager. deltaTime gör så rotationen är oberoende av FPS. JR
             float mouseX = Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;
