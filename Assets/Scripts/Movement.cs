@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour
 
       } else
       {
+            Cursor.lockState = CursorLockMode.Locked;
             if (model.activeSelf == false)
             {
                 model.SetActive(true);

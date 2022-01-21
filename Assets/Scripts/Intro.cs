@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
+    //Saga o Jrs kod
     public Menu menu;
-    void Start()
-    {  
+    public virtual void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
         menu.timeIsRunning = true;
         menu.timeRemaining = 19;
     }
 
-    void Update()
+    public virtual void Update()
     {
         if(menu.timeRemaining < 0)
         {
@@ -20,7 +22,7 @@ public class Intro : MonoBehaviour
         }
     }
 
-    void DisplayTime(float visualTime)
+    public virtual void DisplayTime(float visualTime)
     {
         //ändrar enheten från sekunder mellan varje frame till normala sekunder och minuter som går. JR
         float minutes = Mathf.FloorToInt(visualTime / 60);

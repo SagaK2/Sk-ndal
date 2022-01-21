@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTrigger : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class PlayerTrigger : MonoBehaviour
         if (collider.gameObject.CompareTag("Wall"))
         {
             Return();
-            
+            //Kan annars bara skriva den raden kod?
         }
         else if (collider.gameObject.CompareTag("Finish"))
         {
@@ -62,7 +63,8 @@ public class PlayerTrigger : MonoBehaviour
             //röd FF0000
             lampLight.color = lampColor;
             //Lampan ska lysa grönt, animation
-            
+            SceneManager.LoadScene(3);
+
         }
     }
 

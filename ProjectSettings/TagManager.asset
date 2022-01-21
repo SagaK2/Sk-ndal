@@ -8,6 +8,8 @@ TagManager:
   - ElectricBox
   - talk
   - Ghoulmar
+  - ToClose
+  - ToBeContinued
   layers:
   - Default
   - TransparentFX

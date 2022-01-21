@@ -17,8 +17,9 @@ public class GhoulmarMovement : MonoBehaviour
     public GameObject player;
     public NavMeshAgent mob;
     public float distanceGhoulmar = 5;
+    float gotYouDistance = 6;
     public Transform[] patrolpoints;
-    public Transform playerPoints;
+    public Transform playerPoint;
     int currentPatrolPoint;
 
     /*RaycastHit hit;
@@ -35,7 +36,6 @@ public class GhoulmarMovement : MonoBehaviour
     public void Reset()
     {
         //Så att det blir variation mellan att titta runt och gå runt
-        print("reset");
         timer = 0;
         randomThings = Random.Range(1, 10);
         //mob.updateRotation = true;
@@ -52,11 +52,23 @@ public class GhoulmarMovement : MonoBehaviour
         {
             //Gör så att Ghoulmar alltid är faced mot spelaren när den jagar 
             //mob.SetDestination(player.transform.position);
-            mob.SetDestination(playerPoints.position);
+            mob.SetDestination(playerPoint.position);
             mob.speed = 5;
             mob.isStopped = false;
             animator.SetBool("Running", true);
+            print("distance " + distance);
         }
+        /*else if (distance < gotYouDistance)
+        {
+            print("got you");
+            if ()
+            if(Vector3.Distance(mob.transform.position, playerPoint.position) < 0.4f)
+            {
+                
+                //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
+                //SceneManager.LoadScene(4);
+            }
+        }*/
         else
         {
             //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga
