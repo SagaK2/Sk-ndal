@@ -63,7 +63,7 @@ public class PlayerTrigger : MonoBehaviour
             //röd FF0000
             lampLight.color = lampColor;
             //Lampan ska lysa grönt, animation
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
 
         }
     }
