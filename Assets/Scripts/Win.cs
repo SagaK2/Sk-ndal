@@ -8,7 +8,7 @@ public class Win : Intro
     public override void Start()
     {
         base.Start();
-        menu.timeRemaining = 70;
+        menu.timeRemaining = 82;
     }
 
     public override void Update()

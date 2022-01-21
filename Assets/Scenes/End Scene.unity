@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2b2c1453eeaad4189a74e5634dc5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 80
+  timeRemaining: 80.5
   timeIsRunning: 0
   buttonAnimator: {fileID: 0}
   optionMenu: {fileID: 0}
