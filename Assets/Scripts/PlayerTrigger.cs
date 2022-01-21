@@ -48,7 +48,7 @@ public class PlayerTrigger : MonoBehaviour
         if (collider.gameObject.CompareTag("Wall"))
         {
             Return();
-            
+            //Kan annars bara skriva den raden kod?
         }
         else if (collider.gameObject.CompareTag("Finish"))
         {
@@ -64,7 +64,6 @@ public class PlayerTrigger : MonoBehaviour
             lampLight.color = lampColor;
             //Lampan ska lysa grönt, animation
             SceneManager.LoadScene(0);
-            Cursor.lockState = CursorLockMode.None;
 
         }
     }

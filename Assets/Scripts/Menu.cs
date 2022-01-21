@@ -15,10 +15,16 @@ public class Menu : MonoBehaviour
 
     public GameObject optionMenu;
 
+    /*private void Start()
+    {
+        //Man ska kunna se sin skärm här. (Men när den är locked då fungerar knapparna bra?)
+        Cursor.lockState = CursorLockMode.None;
+    }*/
+
     public /*virtual jag vet inte om vi vill ha en pausmeny än, annars kan den scripten ära från denna*/ void StartGame()
     {
-        SceneManager.LoadScene(1);
         Cursor.lockState = CursorLockMode.Locked;
+        SceneManager.LoadScene(1);
         timeIsRunning = true;
     }
 

@@ -8,7 +8,8 @@ public class Intro : MonoBehaviour
     //Saga o Jrs kod
     public Menu menu;
     public virtual void Start()
-    {  
+    {
+        Cursor.lockState = CursorLockMode.Locked;
         menu.timeIsRunning = true;
         menu.timeRemaining = 19;
     }

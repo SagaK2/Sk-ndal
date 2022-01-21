@@ -17,6 +17,7 @@ public class GhoulmarMovement : MonoBehaviour
     public GameObject player;
     public NavMeshAgent mob;
     public float distanceGhoulmar = 5;
+    float gotYouDistance = 6;
     public Transform[] patrolpoints;
     public Transform playerPoint;
     int currentPatrolPoint;
@@ -56,11 +57,14 @@ public class GhoulmarMovement : MonoBehaviour
             mob.isStopped = false;
             animator.SetBool("Running", true);
 
+            //print("distance " + distance);
+            /*if (distance < gotYouDistance)
             if(Vector3.Distance(mob.transform.position, playerPoint.position) < 0.4f)
             {
+                print("got you");
                 //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
-                SceneManager.LoadScene(4);
-            }
+                //SceneManager.LoadScene(4);
+            }*/
         }
         else
         {
