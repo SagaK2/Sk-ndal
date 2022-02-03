@@ -57,6 +57,12 @@ public class GhoulmarMovement : MonoBehaviour
             mob.isStopped = false;
             animator.SetBool("Running", true);
             print("distance " + distance);
+
+            if(Vector3.Distance(mob.transform.position, playerPoint.position) < 0.1f)
+            {
+                print("got you");
+                SceneManager.LoadScene(4);
+            }
         }
         /*else if (distance < gotYouDistance)
         {
@@ -102,8 +108,6 @@ public class GhoulmarMovement : MonoBehaviour
                 animator.SetBool("Walking", true);
             }
         }
-
-        
 
         if (timer > 5)
         {
