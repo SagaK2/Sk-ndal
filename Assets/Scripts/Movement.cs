@@ -94,12 +94,12 @@ public class Movement : MonoBehaviour
         Player.Move(Velocity * Time.deltaTime);
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    /*private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         print("hit");
         if (hit.gameObject.CompareTag("Ghoulmar"))
         {
             SceneManager.LoadScene(5);
         }
-    }
+    }*/
 }
