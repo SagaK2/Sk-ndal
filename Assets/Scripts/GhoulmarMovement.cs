@@ -14,7 +14,7 @@ public class GhoulmarMovement : MonoBehaviour
     float timer;
 
     //Rörelse runt mappen
-    public GameObject player;
+    //public GameObject player;
     public NavMeshAgent mob;
     public float distanceGhoulmar = 5;
     float gotYouDistance = 6;
@@ -46,7 +46,7 @@ public class GhoulmarMovement : MonoBehaviour
         timer += Time.deltaTime;
         mob.updateRotation = true;
         //För att kunna springa till spelaren om den är i räckhåll
-        float distance = Vector3.Distance(transform.position, player.transform.position);
+        float distance = Vector3.Distance(transform.position, playerPoint.position);
 
         if (distance < distanceGhoulmar)
         {
@@ -58,19 +58,26 @@ public class GhoulmarMovement : MonoBehaviour
             animator.SetBool("Running", true);
             print("distance " + distance);
 
-            if(Vector3.Distance(mob.transform.position, playerPoint.position) < 0.1f)
+            /*if(Vector3.Distance(mob.transform.position, player.transform.position) < 0.1f)
             {
                 print("got you");
                 SceneManager.LoadScene(4);
-            }
+            }*/
+
         }
+        else if (Vector3.Distance(mob.transform.position, playerPoint.position) < 4)
+        {
+            //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
+            print("got you");
+            SceneManager.LoadScene(4);
+        }
+
         /*else if (distance < gotYouDistance)
         {
             print("got you");
             if ()
             if(Vector3.Distance(mob.transform.position, playerPoint.position) < 0.4f)
             {
-                
                 //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
                 //SceneManager.LoadScene(4);
             }
@@ -81,7 +88,7 @@ public class GhoulmarMovement : MonoBehaviour
             //Animationer till Ghoulmar
             if (randomThings > 1 && randomThings < 5) 
             {
-                mob.isStopped = true;
+                //mob.isStopped = true;
                 animator.SetBool("Looking", true);
                 animator.SetBool("Idle", false);
                 animator.SetBool("Walking", false);
