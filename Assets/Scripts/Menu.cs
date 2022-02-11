@@ -42,11 +42,11 @@ public class Menu : MonoBehaviour
         GUILayout.EndArea();
     }
 
-    /*private void Start()
+    private void start()
     {
-        //Man ska kunna se sin skärm här. (Men när den är locked då fungerar knapparna bra?)
+        //. 
         Cursor.lockState = CursorLockMode.None;
-    }*/
+    }
 
     public /*virtual jag vet inte om vi vill ha en pausmeny än, annars kan den scripten ära från denna*/ void StartGame()
     {
