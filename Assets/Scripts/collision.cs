@@ -14,7 +14,8 @@ public class collision : MonoBehaviour
         /*if (hit.gameObject.CompareTag("Ghoulmar"))
         {
             //Då när Ghoulmar rört vid än, då ska en annan scen med en jumpscare dyka upp
-            SceneManager.LoadScene(4);
+            print("Ghoulmarhrhr");
+            //SceneManager.LoadScene(4);
 
         }else*/ if (hit.gameObject.CompareTag("ToClose"))
         {
@@ -33,4 +34,5 @@ public class collision : MonoBehaviour
             toBeContinued.SetActive(false);
         }
     }
+
 }

@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
-
+//Sagas kod
 public class GhoulmarMovement : MonoBehaviour
 {
-    //Sagas kod
     public Animator animator;
     //Låter mig använda andra variabler i detta skript. JR
     public GhoulmarSounds Ljud;
@@ -16,16 +15,14 @@ public class GhoulmarMovement : MonoBehaviour
     //Rörelse runt mappen
     //public GameObject player;
     public NavMeshAgent mob;
-    public float distanceGhoulmar = 5;
+    public float distanceGhoulmar = 20;
     float gotYouDistance = 6;
     public Transform[] patrolpoints;
     public Transform playerPoint;
     int currentPatrolPoint;
 
-    /*RaycastHit hit;
-
-    bool walking;
-    bool running;*/
+    //RaycastHit hit;
+    
     void Start()
     {
         mob.GetComponent<NavMeshAgent>();
@@ -47,7 +44,17 @@ public class GhoulmarMovement : MonoBehaviour
         mob.updateRotation = true;
         //För att kunna springa till spelaren om den är i räckhåll
         float distance = Vector3.Distance(transform.position, playerPoint.position);
-
+        
+        /*if (Vector3.Distance(mob.transform.position, playerPoint.position) > 0.8f)
+        {
+            print("got you");
+            /*if (Vector3.Distance(mob.transform.position, playerPoint.position) < 0.4f)
+              {
+                 //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
+                 //SceneManager.LoadScene(4);
+              }
+        }*/
+        
         if (distance < distanceGhoulmar)
         {
             //Gör så att Ghoulmar alltid är faced mot spelaren när den jagar 
@@ -65,23 +72,17 @@ public class GhoulmarMovement : MonoBehaviour
             }*/
 
         }
+        
+
+        /*
         else if (Vector3.Distance(mob.transform.position, playerPoint.position) < 4)
         {
             //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
             print("got you");
             SceneManager.LoadScene(4);
         }
-
-        /*else if (distance < gotYouDistance)
-        {
-            print("got you");
-            if ()
-            if(Vector3.Distance(mob.transform.position, playerPoint.position) < 0.4f)
-            {
-                //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
-                //SceneManager.LoadScene(4);
-            }
-        }*/
+         
+         */
         else
         {
             //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga

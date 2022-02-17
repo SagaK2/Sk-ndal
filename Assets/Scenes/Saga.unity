@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &109271488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -975,6 +975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f9e7f6feca6ea49bed8cb93b24a977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  miniGame: {fileID: 0}
+  miniGameActive: 0
   pos: {x: 0, y: 0, z: 0}
 --- !u!1 &820855911
 GameObject:
@@ -1088,7 +1090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1036439133
 Light:
   m_ObjectHideFlags: 0
@@ -1548,9 +1550,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   miniGame: {fileID: 215339313}
-  lamp: {fileID: 1036439132}
   lampLight: {fileID: 1036439133}
   lampColor: {r: 0.12595391, g: 1, b: 0, a: 1}
+  clickDrag: {fileID: 0}
+  movement: {fileID: 0}
+  ghoulmar: {fileID: 0}
 --- !u!212 &1306381422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1767,6 +1771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f9e7f6feca6ea49bed8cb93b24a977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  miniGame: {fileID: 0}
+  miniGameActive: 0
   pos: {x: 0, y: 0, z: 0}
 --- !u!1 &1891440537
 GameObject:
@@ -2020,6 +2026,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameTrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 334625428935057334, guid: 6271f2be576718841a85605165d25582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6271f2be576718841a85605165d25582, type: 3}
