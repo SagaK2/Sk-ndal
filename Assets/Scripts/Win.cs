@@ -18,6 +18,10 @@ public class Win : Intro
             SceneManager.LoadScene(0);
             Cursor.lockState = CursorLockMode.None;
         }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            SceneManager.LoadScene(0);
+        }
 
     }
 }

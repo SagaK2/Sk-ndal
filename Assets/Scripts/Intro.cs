@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Intro : MonoBehaviour
 {
     //Saga o Jrs kod
@@ -17,6 +18,10 @@ public class Intro : MonoBehaviour
     public virtual void Update()
     {
         if(menu.timeRemaining < 0)
+        {
+            SceneManager.LoadScene(2);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             SceneManager.LoadScene(2);
         }

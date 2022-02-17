@@ -20,7 +20,7 @@ public class Over : Intro
         if (menu.timeRemaining < 0)
         {
             SceneManager.LoadScene(0);
-            //Här vill man ha tillbaka musen
+            //Här vill man ha tillbaka musen. -Luva
             Cursor.lockState = CursorLockMode.None;
         }
     }
