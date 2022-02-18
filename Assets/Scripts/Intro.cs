@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
+    public float timeRemaining;
+
+    public bool timeIsRunning = false;
+
     //Saga o Jrs kod
     public Menu menu;
     public virtual void Start()
@@ -25,6 +29,7 @@ public class Intro : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+
     }
 
     public virtual void DisplayTime(float visualTime)
