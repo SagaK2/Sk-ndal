@@ -34,5 +34,5 @@ public class collision : MonoBehaviour
             toBeContinued.SetActive(false);
         }
     }
-
+    
 }

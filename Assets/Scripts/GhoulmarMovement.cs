@@ -50,8 +50,9 @@ public class GhoulmarMovement : MonoBehaviour
             print("got you");
             /*if (Vector3.Distance(mob.transform.position, playerPoint.position) < 0.4f)
               {
+
                  //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
-                 //SceneManager.LoadScene(4);
+                 SceneManager.LoadScene(4);
               }
         }*/
         
@@ -72,7 +73,6 @@ public class GhoulmarMovement : MonoBehaviour
             }*/
 
         }
-        
 
         /*
         else if (Vector3.Distance(mob.transform.position, playerPoint.position) < 4)
@@ -80,9 +80,8 @@ public class GhoulmarMovement : MonoBehaviour
             //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
             print("got you");
             SceneManager.LoadScene(4);
-        }
-         
-         */
+        }*/
+
         else
         {
             //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga

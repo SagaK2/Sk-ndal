@@ -2354,7 +2354,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 200
-  field of view: 19.005857
+  field of view: 25
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -10419,7 +10419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2193423312281382723}
   m_LocalRotation: {x: -0.64085644, y: 0.29883623, z: 0.29883623, w: 0.64085644}
-  m_LocalPosition: {x: -4.819687, y: -1.11, z: 0}
+  m_LocalPosition: {x: -4.819687, y: -1.32, z: 0}
   m_LocalScale: {x: 6503.84, y: 4132.3096, z: 4132.3096}
   m_Children: []
   m_Father: {fileID: 543450652595164626}
@@ -15965,7 +15965,7 @@ MonoBehaviour:
   animator: {fileID: 8806668254373522674}
   Ljud: {fileID: 0}
   mob: {fileID: 8806668254373522677}
-  distanceGhoulmar: 20
+  distanceGhoulmar: 15
   patrolpoints:
   - {fileID: 452650772}
   - {fileID: 237006963}
