@@ -90,28 +90,28 @@ public class Lightsoutgame : MonoBehaviour
 
     public void Inactivateb()
     {
-        buttons[1].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[2].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[3].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[4].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[5].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[6].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[7].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[10].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[11].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[12].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[13].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[14].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[15].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[16].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[17].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[18].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[19].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[20].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[21].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[22].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[23].GetComponent<BoxCollider2D>().enabled = false;
-        buttons[24].GetComponent<BoxCollider2D>().enabled = false;
+        buttons[1].GetComponent<BoxCollider>().enabled = false;
+        buttons[2].GetComponent<BoxCollider>().enabled = false;
+        buttons[3].GetComponent<BoxCollider>().enabled = false;
+        buttons[4].GetComponent<BoxCollider>().enabled = false;
+        buttons[5].GetComponent<BoxCollider>().enabled = false;
+        buttons[6].GetComponent<BoxCollider>().enabled = false;
+        buttons[7].GetComponent<BoxCollider>().enabled = false;
+        buttons[10].GetComponent<BoxCollider>().enabled = false;
+        buttons[11].GetComponent<BoxCollider>().enabled = false;
+        buttons[12].GetComponent<BoxCollider>().enabled = false;
+        buttons[13].GetComponent<BoxCollider>().enabled = false;
+        buttons[14].GetComponent<BoxCollider>().enabled = false;
+        buttons[15].GetComponent<BoxCollider>().enabled = false;
+        buttons[16].GetComponent<BoxCollider>().enabled = false;
+        buttons[17].GetComponent<BoxCollider>().enabled = false;
+        buttons[18].GetComponent<BoxCollider>().enabled = false;
+        buttons[19].GetComponent<BoxCollider>().enabled = false;
+        buttons[20].GetComponent<BoxCollider>().enabled = false;
+        buttons[21].GetComponent<BoxCollider>().enabled = false;
+        buttons[22].GetComponent<BoxCollider>().enabled = false;
+        buttons[23].GetComponent<BoxCollider>().enabled = false;
+        buttons[24].GetComponent<BoxCollider>().enabled = false;
     }
 
     public void Hitting()
@@ -120,6 +120,7 @@ public class Lightsoutgame : MonoBehaviour
         {
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+           
 
             if (hit.collider.CompareTag("0"))
             {
@@ -142,91 +143,135 @@ public class Lightsoutgame : MonoBehaviour
             }
             if (hit.collider.CompareTag("3"))
             {
-
+                Changeactivity(2);
+                Changeactivity(4);
+                Changeactivity(8);
             }
             if (hit.collider.CompareTag("4"))
             {
-
+                Changeactivity(3);
+                Changeactivity(5);
+                Changeactivity(9);
             }
             if (hit.collider.CompareTag("5"))
             {
-
+                Changeactivity(4);
+                Changeactivity(6);
+                Changeactivity(10);
             }
             if (hit.collider.CompareTag("6"))
             {
-
+                Changeactivity(5);
+                Changeactivity(7);
+                Changeactivity(11);
             }
             if (hit.collider.CompareTag("7"))
             {
-
+                Changeactivity(6);
+                Changeactivity(7);
+                Changeactivity(12);
             }
             if (hit.collider.CompareTag("8"))
             {
-
+                Changeactivity(7);
+                Changeactivity(8);
+                Changeactivity(13);
             }
             if (hit.collider.CompareTag("9"))
             {
-
+                Changeactivity(8);
+                Changeactivity(9);
+                Changeactivity(14);
             }
             if (hit.collider.CompareTag("10"))
             {
-
+                Changeactivity(9);
+                Changeactivity(10);
+                Changeactivity(15);
             }
             if (hit.collider.CompareTag("11"))
             {
-
+                Changeactivity(10);
+                Changeactivity(11);
+                Changeactivity(16);
             }
             if (hit.collider.CompareTag("12"))
             {
-
+                Changeactivity(11);
+                Changeactivity(12);
+                Changeactivity(17);
             }
             if (hit.collider.CompareTag("13"))
             {
-
+                Changeactivity(12);
+                Changeactivity(13);
+                Changeactivity(18);
             }
             if (hit.collider.CompareTag("14"))
             {
-
+                Changeactivity(13);
+                Changeactivity(14);
+                Changeactivity(19);
             }
             if (hit.collider.CompareTag("15"))
             {
-
+                Changeactivity(14);
+                Changeactivity(15);
+                Changeactivity(20);
             }
             if (hit.collider.CompareTag("16"))
             {
-
+                Changeactivity(15);
+                Changeactivity(16);
+                Changeactivity(21);
             }
             if (hit.collider.CompareTag("17"))
             {
-
+                Changeactivity(16);
+                Changeactivity(17);
+                Changeactivity(22);
             }
             if (hit.collider.CompareTag("18"))
             {
-
+                Changeactivity(17);
+                Changeactivity(18);
+                Changeactivity(23);
             }
             if (hit.collider.CompareTag("19"))
             {
-
+                Changeactivity(18);
+                Changeactivity(19);
+                Changeactivity(24);
             }
             if (hit.collider.CompareTag("20"))
             {
-
+                Changeactivity(19);
+                Changeactivity(20);
+                Changeactivity(25);
             }
             if (hit.collider.CompareTag("21"))
             {
-
+                Changeactivity(20);
+                Changeactivity(21);
+                Changeactivity(26);
             }
             if (hit.collider.CompareTag("22"))
             {
-
+                Changeactivity(21);
+                Changeactivity(22);
+                Changeactivity(27);
             }
             if (hit.collider.CompareTag("23"))
             {
-
+                Changeactivity(22);
+                Changeactivity(23);
+                Changeactivity(28);
             }
             if (hit.collider.CompareTag("24"))
             {
-
+                Changeactivity(23);
+                Changeactivity(24);
+                Changeactivity(29);
             }
 
 

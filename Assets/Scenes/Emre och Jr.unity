@@ -5909,7 +5909,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2268104938802564162}
   - component: {fileID: 1455293525981828857}
-  - component: {fileID: 1455293525981828858}
   - component: {fileID: 1455293525981828859}
   m_Layer: 0
   m_Name: ElectricBox3
@@ -5937,18 +5936,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1455293525981828858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455293525981828856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2be098a3fc595d41b34200a872ef788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1455293525981828859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7648,7 +7635,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3392158714998035132}
   - component: {fileID: 2619000191877138439}
-  - component: {fileID: 2619000191877138440}
   - component: {fileID: 2619000191877138441}
   m_Layer: 0
   m_Name: ElectricBox2
@@ -7676,18 +7662,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2619000191877138440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2619000191877138438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2be098a3fc595d41b34200a872ef788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2619000191877138441
 BoxCollider:
   m_ObjectHideFlags: 0
