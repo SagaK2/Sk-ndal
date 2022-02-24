@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class TextForElectricbox : MonoBehaviour
 {
-    /*
+    
    //Luvas kod
     public GameObject text; //Referens till text gameobject
     public Text dialog; //Referens till UI:n vad som står.
@@ -64,7 +64,7 @@ public class TextForElectricbox : MonoBehaviour
             text.SetActive(false); //Kommer UI:n inte att synas
             showText = false; //Showtext blir false
         }
-    }*/
+    }
 
     
 }
