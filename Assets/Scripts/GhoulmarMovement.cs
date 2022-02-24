@@ -9,10 +9,10 @@ public class GhoulmarMovement : MonoBehaviour
     public Animator animator;
     //Låter mig använda andra variabler i detta skript. JR
     public GhoulmarSounds Ljud;
-    float randomThings; //Används för att sätta igång olika animationer och annat
+    float randomThings; //Används för att sätta igång olika animationer och annat - Saga
     float timer;
 
-    //Rörelse runt mappen
+    //Rörelse runt mappen - Saga
     //public GameObject player;
     public NavMeshAgent mob;
     public float distanceGhoulmar = 20;
@@ -21,18 +21,17 @@ public class GhoulmarMovement : MonoBehaviour
     public Transform playerPoint;
     int currentPatrolPoint;
 
-    //RaycastHit hit;
-    
+    //Här och ner är Sagas kod enbart
     void Start()
     {
         mob.GetComponent<NavMeshAgent>();
-        animator.SetBool("Idle", true);
         //Vill att man ska starta med att vara Idle
+        animator.SetBool("Idle", true);
     }
 
     public void Reset()
     {
-        //Så att det blir variation mellan att titta runt och gå runt
+        //Så att det blir variation mellan att titta runt och gå runt. Genom att starta om timern efter ett visst nummer 
         timer = 0;
         randomThings = Random.Range(1, 10);
         //mob.updateRotation = true;
@@ -45,16 +44,10 @@ public class GhoulmarMovement : MonoBehaviour
         //För att kunna springa till spelaren om den är i räckhåll
         float distance = Vector3.Distance(transform.position, playerPoint.position);
         
-        /*if (Vector3.Distance(mob.transform.position, playerPoint.position) > 0.8f)
+        if (Vector3.Distance(mob.transform.position, playerPoint.position) < 0.8f)
         {
-            print("got you");
-            /*if (Vector3.Distance(mob.transform.position, playerPoint.position) < 0.4f)
-              {
-
-                 //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
-                 SceneManager.LoadScene(4);
-              }
-        }*/
+            SceneManager.LoadScene(4);
+        }
         
         if (distance < distanceGhoulmar)
         {
@@ -84,15 +77,14 @@ public class GhoulmarMovement : MonoBehaviour
 
         else
         {
-            //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga
-            //Animationer till Ghoulmar
+            //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga 
             if (randomThings > 1 && randomThings < 5) 
             {
                 //mob.isStopped = true;
                 animator.SetBool("Looking", true);
                 animator.SetBool("Idle", false);
                 animator.SetBool("Walking", false);
-                //Ville göra så att Ghoulmar randomly tittar runt
+                
 
             }
             else if (randomThings > 4 && randomThings < 10)
