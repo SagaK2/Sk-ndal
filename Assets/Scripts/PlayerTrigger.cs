@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//Sagas kod
 public class PlayerTrigger : MonoBehaviour
 {
-    //Sagas kod
     Vector3 startPos;
     public static bool returnHome;
 
@@ -63,7 +62,7 @@ public class PlayerTrigger : MonoBehaviour
             //röd FF0000
             lampLight.color = lampColor;
             //Lampan ska lysa grönt, animation
-            SceneManager.LoadScene(3);
+            //SceneManager.LoadScene(3); Skickade spelaren till end scene men man måste nu ha tre ellådor inte bara en
 
         }
     }

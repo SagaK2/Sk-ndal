@@ -568,7 +568,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5148817237483311406}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999998, z: 0}
@@ -773,6 +773,7 @@ GameObject:
   - component: {fileID: 319124388}
   - component: {fileID: 319124387}
   - component: {fileID: 319124389}
+  - component: {fileID: 319124390}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -829,6 +830,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toClose: {fileID: 988365394}
   toBeContinued: {fileID: 2116565708}
+--- !u!114 &319124390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319124386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75cf4b38216e40b4997c92652148dbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGame: {fileID: 2015962466}
+  lampLight: {fileID: 5557995298970761351}
+  lampColor: {r: 0, g: 1, b: 0.07763934, a: 0}
+  clickDrag: {fileID: 0}
+  movement: {fileID: 0}
+  ghoulmar: {fileID: 0}
 --- !u!65 &322506759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2651,7 +2670,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436488809}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999998, z: 0}
@@ -3447,7 +3466,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.2, y: 1, z: 7.2}
+  m_Size: {x: 8.2, y: 1.45, z: 7.44}
   m_Center: {x: -4.12, y: 0.22, z: 0}
 --- !u!65 &1898509337
 BoxCollider:
@@ -3496,7 +3515,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3455292423326185339}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999996, z: 0.019999994}
@@ -8895,7 +8914,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6231076012225311516}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -90, y: 62.63519, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98021, y: 8.59299e-31, z: 0}
 --- !u!1 &3676624720573522885
 GameObject:
   m_ObjectHideFlags: 0
@@ -16015,7 +16034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &8806668254373522674
 Animator:
   serializedVersion: 3
