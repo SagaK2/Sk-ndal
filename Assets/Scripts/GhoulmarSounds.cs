@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Jrs kod
 public class GhoulmarSounds : MonoBehaviour
 {
-    //skapar en lista i inspectorn där jag kan lägga in ljudfiler som ska användas. JR
+    //skapar en lista i inspectorn där jag kan lägga in ljudfiler som ska användas.
     public List<AudioClip> soundtrack;
-    //En variabel för ljudkällan. JR
+    //En variabel för ljudkällan.
     AudioSource mySource;
     private void Awake()
     {

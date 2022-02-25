@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//Sagas kod
 public class collision : MonoBehaviour
 {
-    //Sagas kod
     public GameObject toClose;
     public GameObject toBeContinued;
 
@@ -18,7 +17,7 @@ public class collision : MonoBehaviour
 
         }else if (hit.gameObject.CompareTag("ToBeContinued"))
         {
-            //De här lådorna fungerar inte just nu
+            //De här lådorna fungerar inte just nu så man kommer få en text då man förstår att de inte fungerar. (Man måste leta efter en annan)
             toBeContinued.SetActive(true);
         }
         else

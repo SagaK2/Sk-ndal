@@ -64,8 +64,10 @@ public class PlayerTrigger : MonoBehaviour
             //minigamet försvinner i syne
             lampLight.color = lampColor;
             //Färgen som annars lyser rött blir till färgen man valt i unity som just nu är grön
-            //SceneManager.LoadScene(3); Skickade spelaren till end scene men man måste nu ha tre ellådor inte bara en
 
+
+
+            //SceneManager.LoadScene(3); Skickade spelaren till end scene men man måste nu ha tre ellådor inte bara en
         }
     }
 
