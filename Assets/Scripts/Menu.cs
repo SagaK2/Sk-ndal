@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-
+//Sagas kod
 public class Menu : MonoBehaviour
 {
     public float timeRemaining;
@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
 
     public Animator buttonAnimator;
 
-    //Kommer använda funktionerna(?) med knapparna i Unity - Saga 
+    //Kommer använda funktionerna med knapparna i Unity 
 
     public GameObject optionMenu;
 
@@ -20,12 +20,13 @@ public class Menu : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        //Man ska kunna se musen för att veta vilka knappar man klickar på i menyn - Saga
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-
     void OnGUI()
     {
+        //Jrs kod
         Vector3 point = new Vector3();
         Event currentEvent = Event.current;
         Vector2 mousePos = new Vector2();
@@ -44,41 +45,46 @@ public class Menu : MonoBehaviour
         GUILayout.EndArea();
     }
 
-
-
-    public /*virtual jag vet inte om vi vill ha en pausmeny än, annars kan den scripten ära från denna*/ void StartGame()
+    public void StartGame()
     {
+        //Man ska inte se musen här för att man kommer gå till en cutscene - JR
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(1);
         timeIsRunning = true;
     }
 
+    //Här och neråt har Saga skrivit
     void Update()
     {
         if (timeIsRunning)
         {
+            //Om timern är igång och.. 
             if(timeRemaining > 0)
             {
+                //Tiden är mer än 0. Då ska den gå neråt som en timer
                 timeRemaining -= Time.deltaTime;
             }
             else if(timeRemaining == 0)
             {
+                //Tiden är 0 då ska floaten timeRemaining sättas till 0 
                 timeRemaining = 0;
                 timeIsRunning = false;
                 EndGame();
+                //Då ska applikationen stängas ner
             }
         }
 
     }
 
+    //Funktion till när man trycker ner start - Saga
     public void ChangingScene()
     {
         SceneManager.LoadScene(2);
     }
-    public /*virtual*/ void EndGame()
+    //Till när man trycker på Quit knappen -Saga
+    public void EndGame()
     {
         Application.Quit();
-        SceneManager.LoadScene(2);
     }
 }

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//Sagas kod som är ett arv från intro
 public class Over : Intro
 {
-    // Sagas kod som är ett arv från intro
     public override void Start()
     {
         //Vi vill fortfarande att timeIsRunning ska vara true så den behöver man inte ändra på
