@@ -15,13 +15,17 @@ public class Intro : MonoBehaviour
     public virtual void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        menu.timeIsRunning = true;
-        menu.timeRemaining = 19;
+        timeIsRunning = true;
+        timeRemaining = 19;
     }
 
     public virtual void Update()
     {
-        if(menu.timeRemaining < 0)
+        if (timeIsRunning)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+        if(timeRemaining < 0)
         {
             SceneManager.LoadScene(2);
         }

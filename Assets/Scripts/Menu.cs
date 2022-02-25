@@ -20,6 +20,8 @@ public class Menu : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void OnGUI()
@@ -42,14 +44,11 @@ public class Menu : MonoBehaviour
         GUILayout.EndArea();
     }
 
-    private void start()
-    {
-        //. 
-        Cursor.lockState = CursorLockMode.None;
-    }
+
 
     public /*virtual jag vet inte om vi vill ha en pausmeny än, annars kan den scripten ära från denna*/ void StartGame()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(1);
         timeIsRunning = true;
