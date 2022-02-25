@@ -14,7 +14,8 @@ public class buttonclicknoise : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        buttonnoise = gameObject.GetComponent<AudioSource>();
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             buttonnoise.Play();
         }
