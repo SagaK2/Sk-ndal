@@ -44,10 +44,6 @@ public class GhoulmarMovement : MonoBehaviour
         //För att kunna springa till spelaren om den är i räckhåll
         float distance = Vector3.Distance(transform.position, playerPoint.position);
         
-        if (Vector3.Distance(mob.transform.position, playerPoint.position) < 0.8f)
-        {
-            SceneManager.LoadScene(4);
-        }
         
         if (distance < distanceGhoulmar)
         {
@@ -59,42 +55,27 @@ public class GhoulmarMovement : MonoBehaviour
             animator.SetBool("Running", true);
             print("distance " + distance);
 
-            /*if(Vector3.Distance(mob.transform.position, player.transform.position) < 0.1f)
+            if (Vector3.Distance(mob.transform.position, playerPoint.position) < 0.8f)
             {
-                print("got you");
+                //När Ghoulmar är tillräckligt nära spelaren (mindre än 0.8f) ska den flyttas till en jumpscrae scen
                 SceneManager.LoadScene(4);
-            }*/
+            }
 
         }
-
-        /*
-        else if (Vector3.Distance(mob.transform.position, playerPoint.position) < 4)
-        {
-            //Collidern på Ghoulmar är vid sidan och empty player point är i mitten av playern inte längst upp
-            print("got you");
-            SceneManager.LoadScene(4);
-        }*/
-
         else
         {
             //Om den inte har någonting att jaga är det bara att gå tillbaka till det vanliga 
-            if (randomThings > 1 && randomThings < 5) 
+            
+            if (randomThings > 4 && randomThings < 10)
             {
-                //mob.isStopped = true;
-                animator.SetBool("Looking", true);
-                animator.SetBool("Idle", false);
-                animator.SetBool("Walking", false);
-                
-
-            }
-            else if (randomThings > 4 && randomThings < 10)
-            {
+                //När randomthings är på ett av numrena mellan 5-9 då ska den patrullera, den ska gå mot punkterna jag lagt ut på banan som finns i listan
                 mob.SetDestination(patrolpoints[currentPatrolPoint].position);
 
-                if (Vector3.Distance(mob.transform.position, patrolpoints[currentPatrolPoint].position) < 0.1f)
+                if (Vector3.Distance(mob.transform.position, patrolpoints[currentPatrolPoint].position) < 1)
                 {
+                    //Om Ghoulmar är närmare än 
                     //Varför händer inte den här koden?
-                    print("next");
+                    print("next" + currentPatrolPoint);
                     currentPatrolPoint++;
                     if (currentPatrolPoint > patrolpoints.Length - 1)
                     {
@@ -106,32 +87,20 @@ public class GhoulmarMovement : MonoBehaviour
                 animator.SetBool("Looking", false);
                 animator.SetBool("Walking", true);
             }
+            else if (randomThings > 1 && randomThings < 5)
+            {
+                //mob.isStopped = true;
+                animator.SetBool("Looking", true);
+                animator.SetBool("Idle", false);
+                animator.SetBool("Walking", false);
+            }
         }
 
         if (timer > 5)
         {
-            Reset();
             //Den här if-satsen gör så att variationen blir större. Så att den inte gör en animation för länge
+            Reset();
         }
 
     }
-
-    /*void OnCollisionEnter(Collision collision)
-    {
-        print("collider");
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene(5);
-
-        }
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        print("hit");
-        if (hit.gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene(5);
-        }
-    }*/
 }
