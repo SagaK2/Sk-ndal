@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+    //Luvas och sagas kod
     public float timeRemaining;
 
     public bool timeIsRunning = false;
@@ -20,6 +21,7 @@ public class Menu : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        timeIsRunning = true;
     }
 
     void OnGUI()
@@ -55,20 +57,23 @@ public class Menu : MonoBehaviour
         timeIsRunning = true;
     }
 
-    void Update()
+    void Update() 
     {
+        // En timmer som räknar ned ifall talet är större än noll - Luva
         if (timeIsRunning)
         {
             if(timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
             }
-            else if(timeRemaining == 0)
+            else //Om timern = 0 så startar det funktionen endgame, vilket avslutar spelet. - Luva
             {
                 timeRemaining = 0;
                 timeIsRunning = false;
                 EndGame();
             }
+            
+
         }
 
     }
@@ -77,7 +82,7 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
-    public /*virtual*/ void EndGame()
+    public /*virtual*/ void EndGame() //Efter timern har gått ut så laddar denhär funktionen scene två. - Luva
     {
         Application.Quit();
         SceneManager.LoadScene(2);
