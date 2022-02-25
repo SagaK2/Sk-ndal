@@ -34,22 +34,25 @@ public class Menu : MonoBehaviour
         // Note that the y position from Event is inverted.
         mousePos.x = currentEvent.mousePosition.x;
         mousePos.y = cam.pixelHeight - currentEvent.mousePosition.y;
-
+        // För att musen inte ska ha en offset -emre
         point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
-
+        
+        //låter oss se position på mus, spelare och location enligt pixlar på kameran. -emre
         GUILayout.BeginArea(new Rect(20, 20, 250, 120));
         GUILayout.Label("Screen pixels: " + cam.pixelWidth + ":" + cam.pixelHeight);
         GUILayout.Label("Mouse position: " + mousePos);
         GUILayout.Label("World position: " + point.ToString("F3"));
         GUILayout.EndArea();
-    }
+    }    
 
 
-
-    public /*virtual jag vet inte om vi vill ha en pausmeny än, annars kan den scripten ära från denna*/ void StartGame()
+    
+    public /*virtual jag vet inte om vi vill ha en pausmeny än, annars kan den scripten ärva från denna*/ void StartGame()
     {
+        //gör så att muspekaren inte är synlig -JR
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        //laddar in nästa scene - JR
         SceneManager.LoadScene(1);
         timeIsRunning = true;
     }
