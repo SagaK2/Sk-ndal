@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        // Skapar en else sats och flyttar movement för att begränsa beteende när spelet är aktivt - Saga
+      // Skapar en else sats och flyttar movement för att begränsa beteende när spelet är aktivt - Saga
       if (Clickish.miniGameActive) 
       {
             model.SetActive(false);
@@ -56,12 +56,13 @@ public class Movement : MonoBehaviour
             {
                 model.SetActive(true);
             }
-
+            //Här används Jrs kod som ger spelaren movement - Saga
             PlayerMovement();
       }
 
     }
 
+    //La in Jrs kod i en funktion för att göra koden enklare att läsa - Saga
     public void PlayerMovement()
     {
         //referens till mouse x och mouse y från unity inputmanager. deltaTime gör så rotationen är oberoende av FPS. JR
@@ -93,13 +94,4 @@ public class Movement : MonoBehaviour
         //Rör spelaren 
         Player.Move(Velocity * Time.deltaTime);
     }
-
-    /*private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        print("hit");
-        if (hit.gameObject.CompareTag("Ghoulmar"))
-        {
-            SceneManager.LoadScene(5);
-        }
-    }*/
 }

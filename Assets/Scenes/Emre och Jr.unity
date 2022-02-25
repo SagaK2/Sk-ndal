@@ -16034,7 +16034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &8806668254373522674
 Animator:
   serializedVersion: 3
@@ -16087,7 +16087,7 @@ MonoBehaviour:
   - {fileID: 452650772}
   - {fileID: 237006963}
   - {fileID: 1550755891}
-  - {fileID: 589897758582854851}
+  - {fileID: 241276050}
   playerPoint: {fileID: 1332326452}
 --- !u!195 &8806668254373522677
 NavMeshAgent:
