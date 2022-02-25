@@ -47,7 +47,6 @@ public class Movement : MonoBehaviour
             transform.position = gameTarget.position + (offset);
             transform.LookAt(gameTarget);
             // Spelaren flyttas för att se spelet i full skärm - Saga
-            //spelare.transform.position = new Vector3();
 
       } else
       {

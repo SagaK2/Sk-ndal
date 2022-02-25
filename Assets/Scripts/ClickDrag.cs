@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Sagas Kod
 public class ClickDrag : MonoBehaviour
 {
-    //Sagas Kod
     RaycastHit hit;
 
     GameObject selectedObject;
@@ -15,57 +14,52 @@ public class ClickDrag : MonoBehaviour
 
     public Vector3 pos;
 
-
-    //För att göra mini spelet i ellådan lite mindre buggigt (gör så att kuben åker tillbaka även om man håller in musen)
-
     public void Start()
     {
+        //När man är i start och inte håller på med mini spelet då ska inte någon av mini spelets funktioner fungera. 
         isDragging = false;
         miniGameActive = false;
     }
 
     public void MiniGame()
     {
+        //Men nu när minispelet är igång då ska funktionerna vara igång
         miniGame.SetActive(true);
         miniGameActive = true;
-        //Fixa animation & så att man inte kan röra sig alls
     }
 
     void Update()
     {
-
+        //När man trycker ner höger musknapp då ska..
         if (Input.GetMouseButtonDown(0))
         {
+            //Raycastens position vara muspositionen
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))
             {
-                string tag = hit.collider.gameObject.tag;
+                //string tag = hit.collider.gameObject.tag;
                 if (hit.collider.gameObject.CompareTag("ElectricBox"))
                 {
-                    //selectedDoor = hit.collider.gameObject;
+                    //Om raycasten träffar ett object som har namnet Electricbox då ska minispelet gå igång via funktionen MiniGame
                     MiniGame();
                 }
-
-                //Man kan skriva en kod för texten här
 
                 if (hit.collider != null)
                 {
                     //Om vi har klickat på något sätter vi gameobjectet selectedGameobject till det som nyss blivit klickat på
                     if (hit.collider.gameObject.CompareTag("Player"))
                     {
+                        //Om man trycker på spelaren i minispeket i form av en kub då ska boolen isDragging bli true för att man ska kunna röra på spelaren med musens position
                         selectedObject = hit.collider.gameObject;
                         isDragging = true;
-
+                        //selectedObject blir till det man klickar oå tex Cube och Sphere. isDragging är också true
                     }
-                    //selectedObject blir till det man klickar oå tex Cube och Sphere. isDragging är också true
+
                 }
             }
 
-        }/*else if (Input.GetMouseButtonUp(0))
-        {
-            isDragging = false;
-        }*/
+        }
 
         if (isDragging)
         {
@@ -83,7 +77,6 @@ public class ClickDrag : MonoBehaviour
         if (PlayerTrigger.returnHome)
         {
             isDragging = false;
-
         }
     }
     Vector3 MousePos()
