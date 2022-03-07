@@ -34,10 +34,10 @@ public class Menu : MonoBehaviour
         // Note that the y position from Event is inverted.
         mousePos.x = currentEvent.mousePosition.x;
         mousePos.y = cam.pixelHeight - currentEvent.mousePosition.y;
-        // För att musen inte ska ha en offset -emre
+        // För att musen inte ska ha en offset -Emre
         point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
         
-        //låter oss se position på mus, spelare och location enligt pixlar på kameran. -emre
+        //låter oss se position på mus, spelare och location enligt pixlar på kameran. -Emre
         GUILayout.BeginArea(new Rect(20, 20, 250, 120));
         GUILayout.Label("Screen pixels: " + cam.pixelWidth + ":" + cam.pixelHeight);
         GUILayout.Label("Mouse position: " + mousePos);

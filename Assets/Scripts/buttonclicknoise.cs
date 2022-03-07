@@ -18,6 +18,6 @@ public class buttonclicknoise : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             buttonnoise.Play();
-        }
+        }//ljud för när man klickar musen -Emre
     }
 }
